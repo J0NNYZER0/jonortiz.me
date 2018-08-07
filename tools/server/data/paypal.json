@@ -1,0 +1,69 @@
+{
+   "ack":"success",
+   "data":{
+      "id":"PAY-3G060034R3272370KLHG6PAI",
+      "intent":"sale",
+      "state":"approved",
+      "cart":"5922544018625080H",
+      "create_time":"2017-09-29T06:26:22Z",
+      "payer":{
+         "payment_method":"paypal",
+         "status":"VERIFIED",
+         "payer_info":{
+            "email":"bogus1234asdf@bogus1234.com",
+            "first_name":"Bogus",
+            "middle_name":"Bogus",
+            "last_name":"Merchant",
+            "payer_id":"GHM72Y2QXY56Y",
+            "country_code":"US",
+            "shipping_address":{
+               "recipient_name":"Bogus Merchant",
+               "line1":"1 Main St",
+               "city":"San Jose",
+               "state":"CA",
+               "postal_code":"95131",
+               "country_code":"US"
+            }
+         }
+      },
+      "transactions":[
+         {
+            "amount":{
+               "total":"0.01",
+               "currency":"USD",
+               "details":{
+
+               }
+            },
+            "item_list":{
+
+            },
+            "related_resources":[
+               {
+                  "sale":{
+                     "id":"0110084395963584T",
+                     "state":"completed",
+                     "payment_mode":"INSTANT_TRANSFER",
+                     "protection_eligibility":"INELIGIBLE",
+                     "parent_payment":"PAY-3G060034R3272370KLHG6PAI",
+                     "create_time":"2017-09-29T06:26:21Z",
+                     "update_time":"2017-09-29T06:26:21Z",
+                     "amount":{
+                        "total":"0.01",
+                        "currency":"USD",
+                        "details":{
+                           "subtotal":"0.01"
+                        }
+                     }
+                  }
+               }
+            ]
+         }
+      ]
+   },
+   "meta":{
+      "calc":"7371d498e547b",
+      "rlog":"%2FX%2FAxw9OjyneP%2F5kcMKASjIwu53glQwM2Pfx7KdhK3Gg%2BGuIwtjnzf5ZZ1G9bF%2Bh%2Fa9lWXfBUrFP0Mj56IuaAQ_15ecc507e9c"
+   },
+   "server":"4wuBo50kMdABWrhhPN61WAWAaVGvrsa6U2SQlkdD1F8ip4FzhfOJf3tShuKZz57QU4Q9p_Es0Gu3e5bqarf0R7hURe97L1teHJfALNqqflcb1Ko2DNWc0KF2vXz-9r8P5DFFVn3k5_BcTVrjjgC6RnemuNQjCGS0OcR1bBQU0bb1p1aEpD7cCD6XY1q7vIHG8Wr8ta27u90dlyk8q9dYR_O0AsPnQtdrF7eUzcu1-L0GS-ez_74AlfJNrgXyxkEN_wpKaEjpvEy"
+}

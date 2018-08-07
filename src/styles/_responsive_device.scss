@@ -1,0 +1,81 @@
+@media only screen and (min-device-width : 320px) {
+body {
+
+}
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 736px) {
+nav {
+  font-size: 2em;
+}
+.menu__top li:first-child,
+.menu__top li:last-child {
+  width: 150px;
+}
+.icon__logo--nav, .icon__menu {
+  width: 150px;
+  height: 150px;
+  background-size: 120px;
+}
+.icon__menu {
+  background-size: 80px;
+}
+.menu__main li a {
+  padding: 50px 0;
+}
+.menu__social span {
+  height: 100px;
+  width: 120px;
+  background-size: 80px;
+  background-position: 50%;
+  padding: 30px;
+}
+footer {
+  font-size: 2em;
+}
+footer ul.footer__item--menu li a {
+  padding: 0 35px;
+  line-height: 110px;
+}
+.footer__item--company_info {
+  height: 100px;
+}
+.footer__item--company_info li:last-child {
+  vertical-align: middle;
+}
+footer ul.footer__item--company_info li span.copyright {
+  height: 100px;
+  line-height: 100px;
+}
+.footer__item--company_info li:last-child a {
+  height: 100px;
+}
+footer ul.footer__item--company_info li span.icon__logo--footer {
+  width: 100px;
+  height: 100px;
+  background-size: 75px 75px;
+}
+/***ALERTS****/
+ul.cart_alert {
+  font-size: 5em;
+}
+.cart_alert__item span.icon__bag {
+  background: transparent url(/assets/icon-bag.svg) 50% 50%/80px 80px no-repeat;
+}
+.cart_alert__item span.icon__bag {
+  width: 80px;
+  height: 80px;
+}
+/***SHOP DETAIL***/
+.shop_detail {
+  flex-direction: column;
+}
+.number__input > li {
+  height: 69px;
+}
+.shop__list li {
+  width: 800px;
+  height: 950px;
+  background-size: 800px;
+}
+}

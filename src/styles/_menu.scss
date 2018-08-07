@@ -1,0 +1,71 @@
+nav {
+  width: 267px;
+  background-color: #666;
+  box-shadow: 0 0 18px 0 rgba(0,0,6,.66);
+  z-index: 2;
+  font-family: 'NeutrafaceDisplayTitling';
+}
+.site_logo {
+  line-height: 100px;
+  font-size: 2.75em;
+}
+.site_dropdown.show {
+  display: block;
+}
+.site_dropdown > li {
+  border-bottom: 1px solid #999;
+}
+.site_dropdown > li:last-child {
+  border-bottom: none;
+}
+.site_dropdown > li a {
+  display: block;
+  padding: 10px 0;
+  user-select: none;
+  font-size: 1.75em;
+  text-align: center;
+}
+
+@media only screen  and (min-width : 320px) and (max-width : 1224px)  {
+nav {
+  width: 100%;
+  border-bottom: 1px solid #fff;
+}
+.site_header {
+  display: flex;
+  flex-direction: row;
+}
+.site_header li:first-child {
+  flex: 1;
+  margin-left: 20px;
+}
+.site_dropdown {
+  display: none;
+}
+.site_dropdown.show li:first-child a {
+  border-top: 1px solid #FFF;
+}
+.icon__menu {
+  display: block;
+  width: 100px;
+  height: 100px;
+  background-image: url('https://s3.us-east-2.amazonaws.com/ui-icons/menu.svg');
+  background-size: 50px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.icon__menu.show {
+  background-image: url('https://s3.us-east-2.amazonaws.com/ui-icons/x.svg');
+  background-size: 35%;
+}
+}
+
+@media only screen and (min-width : 1225px) and (max-width : 1420px) {
+nav {
+  border-right: 1px solid #fff;
+}
+.site_logo {
+  text-align: center;
+  display: block;
+}
+}
