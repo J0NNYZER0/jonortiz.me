@@ -1,12 +1,23 @@
 nav {
+  display: flex;
+  flex-direction: column;
   width: 267px;
-  background-color: #666;
+  align-items: center;
   box-shadow: 0 0 18px 0 rgba(0,0,6,.66);
   z-index: 2;
   font-family: 'NeutrafaceDisplayTitling';
+  background-color: #666;
+}
+nav > ul {
+  width: 100%;
+}
+nav > ul:first-child {
+  min-height: 100px;
+}
+.site_header li:first-child {
+  height: 2.75em;
 }
 .site_logo {
-  line-height: 100px;
   font-size: 2.75em;
 }
 .site_dropdown.show {
@@ -33,11 +44,11 @@ nav {
 }
 .site_header {
   display: flex;
-  flex-direction: row;
+  flex: 1;
+  align-items: center;
 }
 .site_header li:first-child {
   flex: 1;
-  margin-left: 20px;
 }
 .site_dropdown {
   display: none;
@@ -45,27 +56,40 @@ nav {
 .site_dropdown.show li:first-child a {
   border-top: 1px solid #FFF;
 }
+.home_link {
+  margin-left: 20px;
+}
 .icon__menu {
   display: block;
-  width: 100px;
-  height: 100px;
+  width: 50px;
+  height: 50px;
   background-image: url('https://s3.us-east-2.amazonaws.com/ui-icons/menu.svg');
-  background-size: 50px;
+  background-size: 40px;
   background-position: center;
   background-repeat: no-repeat;
+  margin-right: 20px;
 }
 .icon__menu.show {
   background-image: url('https://s3.us-east-2.amazonaws.com/ui-icons/x.svg');
-  background-size: 35%;
+  background-size: 30px;
 }
 }
 
 @media only screen and (min-width : 1225px) and (max-width : 1420px) {
 nav {
   border-right: 1px solid #fff;
+  height: 100vh;
+}
+.site_header {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.site_dropdown {
+  width: 100%;
 }
 .site_logo {
-  text-align: center;
   display: block;
 }
 }

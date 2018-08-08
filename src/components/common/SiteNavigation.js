@@ -29,7 +29,7 @@ class SiteNavigation extends React.Component {
       <nav>
         <ul className="site_header">
           <li>
-            <IndexLink to="/">
+            <IndexLink className="home_link" to="/">
               <span className="site_logo">Jon Ortiz</span>
             </IndexLink>
           </li>

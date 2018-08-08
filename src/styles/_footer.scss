@@ -1,30 +1,16 @@
 footer {
-  width: 100%;
-  height: 90px;
-  align-self: flex-end;
+  min-height: 100px;
   display: flex;
+  align-items: center;
   border-top: 1px solid #fff;
   background-color: #666;
   font-family: 'NeutrafaceDisplayTitling';
   font-size: 1.25em;
-  padding-top: 20px;
 }
 footer ul {
-  margin-left: 20px;
-  margin-right: 20px;
-}
-footer ul.company_info {
-  display: flex;
   flex: 1;
-  align-items: center;
-}
-footer ul.company_info li {
-  flex: 1;
-  text-align: right;
-}
-.menu__social {
-  display: flex;
-  align-items: center;
+  margin: 20px;
+  height: 40px;
 }
 .menu__social > li {
   display: inline-block;
@@ -39,28 +25,27 @@ footer ul.company_info li {
 }
 span.copyright {
   display: block;
-  text-align: center;
 }
 
 @media only screen and (min-width : 320px) and (max-width : 640px) {
 footer {
   flex-direction: column;
 }
-.footer__item--menu {
-  display: flex;
+footer ul:first-child {
+  margin-bottom: 0;
 }
-footer ul.menu__social {
-  display: block;
-}
-.menu__social {
-  text-align: center;
+footer ul:last-child {
+  margin-top: 0;
 }
 }
 
 @media only screen  and (min-width : 641px) and (max-width : 1420px) {
-footer {
-  border-top: 1px solid #fff;
-  padding-top: 0;
+ul.company_info {
+  display: flex;
+  align-items: center;
+}
+footer ul.company_info li {
+  flex: 1;
 }
 footer ul.company_info li:nth-child(2) {
   width: 140px;

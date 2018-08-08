@@ -3,7 +3,7 @@ import * as fetchTypes from '../constants/fetchTypes';
 import * as endpoints from '../constants/endpoints';
 import * as config from '../constants/configurations';
 
-const fetch = {
+const _fetch = {
   isError: (bool) => {
 
     return {
@@ -27,7 +27,7 @@ const fetch = {
   }
 }
 
-const data = {
+const _data = {
   detail: (data) => {
     return {
       type: types.RESUME.DETAIL,
@@ -63,6 +63,6 @@ const resumeDetail = (data) => {
 
 
 
-export {
+export default {
   resumeLoad
 };

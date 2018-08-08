@@ -43,8 +43,9 @@ a {
 	text-decoration: none;
   color: #fff;
   outline: none;
+  display: inline-block;
 }
-ul {
+ul,li {
 	padding: 0;
 	margin: 0;
 }
@@ -64,6 +65,7 @@ main {
 section {
   margin: 30px;
   flex: 1;
+  position: relative;
 }
 .layout {
   display: flex;

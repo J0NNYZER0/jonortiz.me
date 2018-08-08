@@ -1,0 +1,15 @@
+.layer-one {
+  @include parallaxImage(
+    'https://s3.us-east-2.amazonaws.com/jonortiz.me/pancakes.svg',
+    50%, center center, calc(100vw - 60px), calc(100vh - 202px), 3, 0, 1.0
+  );
+}
+.layer-two {
+  @include parallaxText(
+    calc(100vw - 60px), calc(100vh - 202px), 1, 0, 1.0
+  );
+}
+.layer-one h1 {
+  font-size: 6em;
+  width: 100%;
+}

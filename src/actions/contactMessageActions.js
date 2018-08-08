@@ -3,60 +3,60 @@ import * as fetchTypes from '../constants/fetchTypes';
 import * as endpoints from '../constants/endpoints';
 import * as config from '../constants/configurations';
 
-const fetching = {
+const _fetch = {
   isError: (bool) => {
 
     return {
-      type: types.FETCH.IS_ERROR,
+      type: fetchTypes.FETCH.IS_ERROR,
       error: bool
     };
   },
   isSuccess: (bool) => {
 
     return {
-      type: types.FETCH.IS_SUCCESS,
+      type: fetchTypes.FETCH.IS_SUCCESS,
       success: bool
     };
   },
   isInProgress: (bool) => {
 
     return {
-      type: types.FETCH.IS_IN_PROGRESS,
+      type: fetchTypes.FETCH.IS_IN_PROGRESS,
       wating: bool
     };
   }
 }
 
-const data = {
+const _data = {
   detail: (data) => {
     return {
-      type: types.CONTACT_MESSAGE.INSERT,
+      type: fetchTypes.CONTACT_MESSAGE.INSERT,
       data
     };
   }
 }
 
 const contactMessageInsert = (data) => {
-  dispatch(fetching.isInProgress(true));
+  dispatch(_fetch.isInProgress(true));
   return dispatch => {
     fetch(api.HOST + endpoints.CONTACT_MESSAGE.INSERT,
       config.HEADERS.JSON.GET()
     )
     .then(response => {
       if (!response.ok) {
-        dispatch(fetching.isError(true))
+        dispatch(_fetch.isError(true))
         throw Error(response.statusText);
       }
 
-      dispatch(fetching.isSuccess(true));
-      dispatch(fetching.isInProgress(false));
+      dispatch(_fetch.isSuccess(true));
+      dispatch(_fetch.isInProgress(false));
       return response.json();
     })
     .then(data => {
-      dispatch(data.detail(data))
+      dispatch(_data.detail(data))
     })
     .catch(() => {
-      dispatch(fetching.isError(true))
+      dispatch(_fetch.isError(true))
     });
   };
 };

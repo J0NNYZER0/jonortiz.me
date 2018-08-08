@@ -1,4 +1,6 @@
 @import 'fonts';
+@import 'reset';
+@import 'mixins';
 @import 'base';
 @import 'menu';
 @import 'footer';
@@ -6,5 +8,6 @@
 @import './forms/checkbox';
 @import './forms/button';
 @import './components/tabs';
+@import './parallax/home';
 //@import 'responsive_device';
 //@import 'preloader';

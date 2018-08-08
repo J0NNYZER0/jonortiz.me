@@ -5,7 +5,13 @@ class Home extends React.Component {
   render() {
     return (
       <main>
-        <section />
+        <section>
+        <h1>Full Stack</h1>
+        <h1>Engineer</h1>
+        {/*<div className="layer-one">
+
+        </div>*/}
+        </section>
         <Footer />
       </main>
     );
