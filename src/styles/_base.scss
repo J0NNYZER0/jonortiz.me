@@ -10,6 +10,7 @@ html, body {
   font-weight: 300;
   color: #fff;
   user-select: none;
+  background-color: #666;
 }
 h1, h2, h3 {
   text-shadow: 1px 1px 3px rgba(60, 60, 60, 0.6);
@@ -29,9 +30,12 @@ h3 {
   font-size: 1.75em;
 }
 p {
+  b {
+    font-family: 'NeutrafaceDisplayTitling';
+  }
   line-height: .85em;
   margin: auto;
-  font-family: 'NeutrafaceTextDemi';
+  font-family: 'NeutrafaceTextBook';
   font-size: 2em;
   text-align: justify;
   line-height: 2em;

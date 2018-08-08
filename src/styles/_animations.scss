@@ -1,0 +1,21 @@
+@keyframes header__arrow {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1
+    }
+
+    40% {
+        transform: translateY(15px) scale(.95);
+        opacity: 0
+    }
+
+    60% {
+        transform: translateY(-15px) scale(.95);
+        opacity: 0
+    }
+
+    to {
+        transform: translateY(0) scale(1);
+        opacity: 1
+    }
+}
