@@ -61,7 +61,7 @@ class ContactForm extends Component {
 
     let button = {
       onClick: this.handleSubmit,
-      title:'Send us a message!'
+      title:'Send me a message'
     },
     selectOptions = [
       {name: 'My order/preorder', value: 1},
@@ -100,7 +100,9 @@ class ContactForm extends Component {
           onChange={this.handleOnChange}
           validate={this.state.validation.comments}
           hasErrors={this.handleHasErrors} />
-        <ul className="form__section">
+          <FormButton toggle={this.toggleSubmitButton} options={button} />
+
+        {/*<ul className="form__section">
           <li className="form__section--left">
             <Link to="/login">Login</Link><span>{' or '}</span>
             <Link to="/forgot">Forgot</Link>
@@ -108,7 +110,7 @@ class ContactForm extends Component {
           <li className="form__section--right">
             <FormButton toggle={this.toggleSubmitButton} options={button} />
           </li>
-        </ul>
+        </ul>*/}
       </form>
     );
   }

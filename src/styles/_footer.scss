@@ -3,30 +3,58 @@ footer {
   display: flex;
   align-items: center;
   border-top: 1px solid #fff;
-  background-color: #666;
+  background-color: #444;
   font-family: 'NeutrafaceDisplayTitling';
   font-size: 1.25em;
 }
 footer ul {
-  flex: 1;
+  flex: auto;
   align-items: center;
   display: flex;
-  margin: 20px;
   height: 40px;
 }
-.menu__social > li {
+footer ul.menu__social {
+  margin-top: 20px;
+}
+.menu__social > li,
+.site_love > li {
   display: inline-block;
 }
-.menu__social span {
-  height: 40px;
+ul.site_love li {
+  width: 100%;
+  text-align: center;
+}
+div.love_message {
+  width: 50vw;
+  margin: 0 auto;
+  position: absolute;
+  bottom: 100px;
+  font-size: .85em;
+  color: #555;
+  background-color: #fff;
+  border: 3px solid #666;
+}
+.menu__social span,
+.site_love span {
+  height: 30px;
   width: 60px;
   display: block;
-  background-size: 40px;
+  background-size: 30px;
   background-repeat: no-repeat;
   background-position: 50%;
 }
+.site_love span {
+  height: 20px;
+  background-size: 20px;
+}
 span.copyright {
   display: block;
+  font-family: 'NeutrafaceDisplayTitling';
+}
+.home footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
 @media only screen and (min-width : 320px) and (max-width : 640px) {
@@ -42,17 +70,24 @@ footer ul:last-child {
 }
 
 @media only screen  and (min-width : 641px) and (max-width : 1420px) {
-ul.company_info {
+
+footer ul.menu__social,
+footer ul.site_love {
+  margin-top: 0px;
+  text-align: center;
+}
+footer ul.company_info {
   display: flex;
   align-items: center;
 }
 footer ul.company_info li {
-  flex: 1;
+  flex: auto;
 }
 footer ul.company_info li:nth-child(2) {
   width: 140px;
 }
 span.copyright {
   text-align: right;
+  margin-right: 20px;
 }
 }

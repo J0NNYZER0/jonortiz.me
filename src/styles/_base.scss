@@ -13,10 +13,19 @@ html, body {
   background-color: #666;
 }
 h1, h2, h3 {
+  //color: #000;
   text-shadow: 1px 1px 3px rgba(60, 60, 60, 0.6);
   margin: 0;
-  font-family: 'NeutrafaceDisplayTitling';
   line-height: .85em;
+}
+h1, h2, h3 {
+  font-family: 'NeutrafaceDisplayTitling';
+}
+h3 {
+  font-family: 'NeutrafaceTextBold';
+}
+h4 {
+  font-family: 'NeutrafaceDisplayTitling';
 }
 h1 {
   font-size: 2.25em;
@@ -29,7 +38,7 @@ h2 {
 h3 {
   font-size: 1.75em;
 }
-p {
+p, li {
   b {
     font-family: 'NeutrafaceDisplayTitling';
   }
@@ -54,14 +63,22 @@ ul,li {
 	margin: 0;
 }
 li {
+  font-family: 'NeutrafaceTextBook';
 	list-style: none;
+  font-size: 1.15em;
 }
 main {
-	background: #ccc;
-	background: -webkit-radial-gradient(circle, #ccc 10%, #666 99.9%);
+	background: #666;
+	/*background: -webkit-radial-gradient(circle, #ccc 10%, #666 99.9%);
 	background: -o-radial-gradient(circle, #ccc 10%, #666 99.9%);
 	background: -moz-radial-gradient(circle, #ccc 10%, #666 99.9%);
 	background: radial-gradient(circle, #ccc 10%, #666 99.9%);
+
+  background: #fff;
+	background: -webkit-radial-gradient(circle, #fff 10%, #ccc 99.9%);
+	background: -o-radial-gradient(circle, #fff 10%, #ccc 99.9%);
+	background: -moz-radial-gradient(circle, #fff 10%, #ccc 99.9%);
+	background: radial-gradient(circle, #fff 10%, #ccc 99.9%);*/
   flex: 1;
   display: flex;
   flex-direction: column;

@@ -11,14 +11,14 @@ const _fetch = {
       error: bool
     };
   },
-  isSuccess = (bool) => {
+  isSuccess: (bool) => {
 
     return {
       type: types.FETCH.IS_SUCCESS,
       success: bool
     };
   },
-  isInProgress = (bool) => {
+  isInProgress: (bool) => {
 
     return {
       type: types.FETCH.IS_IN_PROGRESS,
@@ -39,7 +39,7 @@ const _data = {
 const resumeDetail = (data) => {
   dispatch(fetch.isInProgress(true));
   return dispatch => {
-    fetch(api.HOST + endpoints.RESUME.DETAIL,
+    fetch(config.HOST + endpoints.RESUME.DETAIL,
       config.HEADERS.JSON.GET()
     )
     .then(response => {
@@ -53,7 +53,7 @@ const resumeDetail = (data) => {
       return response.json();
     })
     .then(data => {
-      dispatch(data.detail(data))
+      dispatch(_data.detail(data))
     })
     .catch(() => {
       dispatch(fetch.isError(true))

@@ -10,6 +10,7 @@
 	border-radius: 6px;
 	color: #FFF;
 	border: 0;
+	display: block;
 }
 button:disabled,
 button[disabled]:hover,
@@ -21,7 +22,7 @@ button[disabled]{
 	border-radius: 6px;
 }
 a.button:hover,
-.button:hover {
+button.button:hover {
 	color: #ccc;
   background-color: #333;
 }

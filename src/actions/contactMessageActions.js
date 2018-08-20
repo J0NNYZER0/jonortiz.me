@@ -28,7 +28,7 @@ const _fetch = {
 }
 
 const _data = {
-  detail: (data) => {
+  insert: (data) => {
     return {
       type: fetchTypes.CONTACT_MESSAGE.INSERT,
       data
@@ -39,7 +39,7 @@ const _data = {
 const contactMessageInsert = (data) => {
   dispatch(_fetch.isInProgress(true));
   return dispatch => {
-    fetch(api.HOST + endpoints.CONTACT_MESSAGE.INSERT,
+    fetch(config.HOST + endpoints.CONTACT_MESSAGE.INSERT,
       config.HEADERS.JSON.GET()
     )
     .then(response => {
@@ -53,7 +53,7 @@ const contactMessageInsert = (data) => {
       return response.json();
     })
     .then(data => {
-      dispatch(_data.detail(data))
+      dispatch(_data.insert(data))
     })
     .catch(() => {
       dispatch(_fetch.isError(true))
