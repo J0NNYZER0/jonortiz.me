@@ -9,7 +9,7 @@ const Footer = () => {
       <p>
         Made with 🖤 by me. The <b>UI</b> is Reactjs.
         The <b>API</b> is Nodejs. The <b>DB</b> is Mysql.
-        It lives on Heroku. Some stuff is on AWS. Here is my code.
+        It lives on <b>Heroku</b>. Some stuff is on <b>AWS</b>. Here is my <b>git</b> repo.
       </p>
     </div>
     <footer>

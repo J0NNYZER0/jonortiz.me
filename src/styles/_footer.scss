@@ -25,11 +25,10 @@ ul.site_love li {
   text-align: center;
 }
 div.love_message {
-  width: 50vw;
+  width: calc(100% - 6px);
   margin: 0 auto;
   position: absolute;
   bottom: 100px;
-  font-size: .85em;
   color: #555;
   background-color: #fff;
   border: 3px solid #666;

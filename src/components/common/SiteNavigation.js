@@ -57,10 +57,10 @@ class SiteNavigation extends React.Component {
             <a onClick={() => setElementToScrollTo(6, this.toggle)}>Education</a>
           </div>
           <div>
-            <a onClick={() => setElementToScrollTo(7, this.toggle)}>Download My Resume</a>
+            <a onClick={() => setElementToScrollTo(7, this.toggle)}>My Resume</a>
           </div>
           <div>
-            <a onClick={() => setElementToScrollTo(8, this.toggle)}>Contact</a>
+            <a onClick={() => setElementToScrollTo(8, this.toggle)}>Contact Me</a>
           </div>
         </div>
       </nav>);
