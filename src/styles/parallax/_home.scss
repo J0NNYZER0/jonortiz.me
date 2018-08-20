@@ -67,6 +67,9 @@
   width: 100%;
   display: flex;
 }
+.button {
+  margin: 20px;
+}
 .job_date h2 {
   font-size: 3.5em;
 }
@@ -182,6 +185,12 @@ ul.tagcloud li:nth-of-type(5n - 3) {
   .job_wrapper > div:nth-child(2) {
     flex-direction: column;
   }
+  .job_wrapper .button-wrapper {
+    margin-top: 10px;
+  }
+  .button {
+    margin: 0;
+  }
   .job_location {
     text-align: left;
     margin-top: 20px;
@@ -199,8 +208,10 @@ ul.tagcloud li:nth-of-type(5n - 3) {
     text-align: right;
   }
 }
-@media only screen and (max-width: 558px) and (min-width: 420px) {
-
+@media only screen and (max-width: 600px) and (min-width: 400px) {
+  .job_wrapper .button-wrapper {
+    flex-direction: column;
+  }
 }
 @media only screen and (max-width: 627px) and (min-width: 558px) {
 

@@ -68,7 +68,7 @@ class Home extends React.Component {
         <main className="home">
           <Modal show={this.state.modal.show} toggle={this.toggle.bind(this, '', '')} title={this.state.modal.title} content={this.state.modal.content} />
           <section>
-            <Parallax ref={"parallax"} pages={9}>
+            <Parallax ref={"parallax"} pages={10}>
               <Parallax.Layer offset={0} speed={1} style={styles}
                   onClick={() => this.refs.parallax.scrollTo(1)}>
                 <section className="frame start">
@@ -250,7 +250,7 @@ class Home extends React.Component {
                   </ul>
                 </section>
               </Parallax.Layer>
-              <Parallax.Layer offset={6} speed={1} onClick={() => this.refs.parallax.scrollTo(0)}>
+              <Parallax.Layer offset={7} speed={1} onClick={() => this.refs.parallax.scrollTo(0)}>
                 <section className="frame edu">
                   <h1>Education</h1>
                   <ul>
@@ -261,7 +261,7 @@ class Home extends React.Component {
                   </ul>
                 </section>
               </Parallax.Layer>
-              <Parallax.Layer offset={7} speed={1}>
+              <Parallax.Layer offset={8} speed={1}>
                 <section className="frame resume">
                   <h1>Download My Resume</h1>
                   <div className="download-resume-container">
@@ -269,7 +269,7 @@ class Home extends React.Component {
                   </div>
                 </section>
               </Parallax.Layer>
-              <Parallax.Layer offset={8} speed={1}>
+              <Parallax.Layer offset={9} speed={1}>
                 <section className="frame end">
                   <h1>Thank you</h1>
                   <ContactForm />
