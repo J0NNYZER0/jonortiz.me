@@ -5,11 +5,11 @@ const Footer = () => {
   year = today.getFullYear();
   return (
     <div>
-    <div className="love_message">
+    <div className="love_message show">
       <p>
-        Made with 🖤 by me. The <b>UI</b> is Reactjs.
-        The <b>API</b> is Nodejs. The <b>DB</b> is Mysql.
-        It lives on <b>Heroku</b>. Some stuff is on <b>AWS</b>. Here is my <b>git</b> repo.
+        Made with 🖤 by me. The UI is <b>Reactjs</b>.
+        The API is <b>Nodejs</b>. The DB is <b>Mysql</b>.
+        The PaAS is <b>Heroku</b>. The CDN is <b>AWS</b>. The code is on <b>git</b>.
       </p>
     </div>
     <footer>
@@ -17,6 +17,11 @@ const Footer = () => {
         <li>
           <a href="https://github.com/J0NNYZER0" target="_blank">
             <span style={{ backgroundImage: 'url(https://s3.us-east-2.amazonaws.com/ui-icons/white/github.svg' }} />
+          </a>
+        </li>
+        <li>
+          <a href="https://dribbble.com/J0NNYZER0" target="_blank">
+            <span style={{ backgroundImage: 'url(https://s3.us-east-2.amazonaws.com/ui-icons/white/dribbble.svg' }} />
           </a>
         </li>
         <li>
