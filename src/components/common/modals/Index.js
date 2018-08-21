@@ -8,9 +8,9 @@ class Modal extends React.Component {
   }
 
   render() {
-    let modalClass = (this.props.show) ? 'modal' : 'modal hide',
+    let modalClass = (this.props.show) ? 'modal' : 'modal hide'/*,
       layout = null,
-      preloader = <div className="modal__preloader"><div className="modal__spinner"><span className="preloader__image" /></div></div>;
+      preloader = <div className="modal__preloader"><div className="modal__spinner"><span className="preloader__image" /></div></div>;*/
 
     return (
       <div className={modalClass}>

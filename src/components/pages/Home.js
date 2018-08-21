@@ -16,14 +16,14 @@ class Home extends React.Component {
       }
     }
 
-    this.toggle = this.toggle.bind(this)
+    this.toggle = this.toggle.bind(this);
   }
 
-  componentWillUpdate(nextProps, nextState) {
+  componentWillUpdate(nextProps) {
 
     if (nextProps.scrollToElement !== null) {
-      setTimeout(() => this.refs.parallax.scrollTo(nextProps.scrollToElement), 100);
 
+      setTimeout(() => this.refs.parallax.scrollTo(nextProps.scrollToElement), 100);
     }
   }
 
@@ -56,6 +56,7 @@ class Home extends React.Component {
   }
 
   render() {
+
     const styles = {
       fontFamily: 'Menlo-Regular, Menlo, monospace',
       fontSize: 14,
@@ -63,7 +64,7 @@ class Home extends React.Component {
       color: 'white',
       display: 'flex', alignItems: 'center', justifyContent: 'center'
     }
-    console.log('data', jobsData)
+
     return (
         <main className="home">
           <Modal show={this.state.modal.show} toggle={this.toggle.bind(this, '', '')} title={this.state.modal.title} content={this.state.modal.content} />

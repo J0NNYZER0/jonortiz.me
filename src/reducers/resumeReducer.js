@@ -9,7 +9,7 @@ const resumeReducer = (state = initialState.resume, action) => {
 
     case actionTypes.RESUME.LOAD: {
 
-      return {...newState, action.data}
+      return {...newState, resumes: action.data}
     }
 
     default:

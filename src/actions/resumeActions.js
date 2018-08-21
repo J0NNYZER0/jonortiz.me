@@ -1,4 +1,4 @@
-import fetch from 'isomorphic-fetch';
+/*import fetch from 'isomorphic-fetch';
 import * as fetchTypes from '../constants/fetchTypes';
 import * as endpoints from '../constants/endpoints';
 import * as config from '../constants/configurations';
@@ -65,4 +65,4 @@ const resumeDetail = (data) => {
 
 export default {
   resumeLoad
-};
+};*/

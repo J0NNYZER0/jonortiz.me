@@ -1,8 +1,11 @@
 import React from 'react';
+import {bindActionCreators} from 'redux';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
-//import {bindActionCreators} from 'redux';
 import { withRouter } from 'react-router';
+import * as messageActions from '../actions/messageActions';
+import * as resumeActions from '../actions/resumeActions';
+
 import SiteNavigation from './common/SiteNavigation';
 
 class App extends React.Component {
@@ -41,11 +44,19 @@ App.propTypes = {
 };
 
 function mapStateToProps(state) {
-  return {};
+  return {
+    messages: state.messages,
+    resume: state.resumes
+  };
 }
 
 function mapDispatchToProps(dispatch) {
-  return {};
+  return {
+    actions: {
+      message: bindActionCreators(messageActions, dispatch),
+      resume: bindActionCreators(resumeActions, dispatch)
+    }
+  };
 }
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));

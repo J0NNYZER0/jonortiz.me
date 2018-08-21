@@ -1,4 +1,5 @@
 import fetch from 'isomorphic-fetch';
+import * as actionTypes from '../constants/actionTypes';
 import * as fetchTypes from '../constants/fetchTypes';
 import * as endpoints from '../constants/endpoints';
 import * as config from '../constants/configurations';
@@ -30,17 +31,18 @@ const _fetch = {
 const _data = {
   insert: (data) => {
     return {
-      type: fetchTypes.CONTACT_MESSAGE.INSERT,
+      type: actionTypes.MESSAGE.INSERT,
       data
     };
   }
 }
 
-const contactMessageInsert = (data) => {
-  dispatch(_fetch.isInProgress(true));
+const messageInsert = (data) => {
   return dispatch => {
-    fetch(config.HOST + endpoints.CONTACT_MESSAGE.INSERT,
-      config.HEADERS.JSON.GET()
+    dispatch(_fetch.isInProgress(true));
+
+    fetch(config.HOST + endpoints.MESSAGE.INSERT,
+      config.HEADERS.JSON.POST(data),
     )
     .then(response => {
       if (!response.ok) {
@@ -64,5 +66,5 @@ const contactMessageInsert = (data) => {
 
 
 export default {
-  insert: contactMessageInsert
+  insert: messageInsert
 };

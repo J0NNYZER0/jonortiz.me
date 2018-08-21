@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import {Link} from 'react-router';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import * as contactMessageActions from '../../../actions/contactMessageActions.js';
+import * as messageActions from '../../../actions/messageActions.js';
 import SelectBox from './elements/SelectBox';
 import TextAreaInput from './elements/TextAreaInput';
 import TextInput from './elements/TextInput';
@@ -124,7 +123,7 @@ ContactForm.propTypes = {
 const mapDispatchToProps = (dispatch) => {
 
   return {
-    actions: bindActionCreators(contactMessageActions, dispatch)
+    actions: bindActionCreators(messageActions, dispatch)
   };
 }
 

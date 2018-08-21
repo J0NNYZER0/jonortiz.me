@@ -6,10 +6,10 @@ export const RESUME = {
   UPDATE: '/resume/update'
 }
 
-export const CONTACT_MESSAGE = {
-  DELETE: '/contact-message/delete',
-  LIST: '/contact-message/list',
-  DETAIL: '/contact-message/detail',
-  INSERT: '/contact-message/insert',
-  UPDATE: '/contact-message/update'
+export const MESSAGE = {
+  DELETE: '/message/delete',
+  LIST: '/message/list',
+  DETAIL: '/message/detail',
+  INSERT: '/message/insert',
+  UPDATE: '/message/update'
 }

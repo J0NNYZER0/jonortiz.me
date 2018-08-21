@@ -199,6 +199,16 @@ ul.tagcloud li:nth-of-type(5n - 3) {
     margin: auto 30px;
   }
 }
+.back_to_top_button {
+  display: none;
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
+  z-index: 10;
+}
+.back_to_top_button.show {
+  display: block;
+}
 @media only screen and (max-width: 1224px) and (min-width: 600px) {
   .job_wrapper > div:nth-child(2) {
     flex-direction: row;

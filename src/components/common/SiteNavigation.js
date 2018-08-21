@@ -1,8 +1,5 @@
 import React from 'react';
-import { findDOMNode } from 'react-dom';
 import PropTypes from 'prop-types';
-import { browserHistory, Link, IndexLink } from 'react-router';
-import Parallax from 'react-springy-parallax';
 
 class SiteNavigation extends React.Component {
   constructor(props) {
@@ -31,7 +28,7 @@ class SiteNavigation extends React.Component {
 
   render() {
 
-    const { pathname, setElementToScrollTo } = this.props;
+    const { setElementToScrollTo } = this.props;
 
     return (
       <nav>
@@ -46,7 +43,6 @@ class SiteNavigation extends React.Component {
           </div>
         </div>
         <div className={(this.state.toggle) ? 'site_dropdown show' : 'site_dropdown'}>
-          {(pathname !== '/home' && pathname !== '/') && <div><IndexLink to="/">Home</IndexLink></div>}
           <div>
             <a onClick={() => setElementToScrollTo(1, this.toggle)}>Experience</a>
           </div>

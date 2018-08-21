@@ -1,4 +1,4 @@
 export default {
   resumes: [],
-  contactMessages: []
+  messages: []
 };

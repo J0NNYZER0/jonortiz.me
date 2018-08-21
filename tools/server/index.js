@@ -4,7 +4,18 @@ const Hapi = require('hapi'),
   Server = new Hapi.Server(),
   Path = require('path'),
   Inert = require('inert'),
-  Utils = require('./utils'),
+  CreateDate = () => {
+    let today = new Date(),
+    year = today.getFullYear(),
+    month = today.getMonth(),
+    day = today.getDate(),
+    hour = today.getHours(),
+    minute = today.getMinutes(),
+    second = today.getSeconds(),
+    date = new Date(Date.UTC(year, month, day, hour, minute, second)).toString()
+
+    return date
+  },
   FileHandler = (request, reply) => {
     reply.file(Path.join(__dirname, '../../dist/index.html'))
   },
@@ -26,51 +37,11 @@ const Hapi = require('hapi'),
     Static: [
       {
         method: 'GET',
+        path: '/'
+      },
+      {
+        method: 'GET',
         path: '/home'
-      },
-      {
-        method: 'GET',
-        path: '/shop'
-      },
-      {
-        method: 'GET',
-        path: '/shop/detail/{id}'
-      },
-      {
-        method: 'GET',
-        path: '/my-account'
-      },
-      {
-        method: 'GET',
-        path: '/my-shop'
-      },
-      {
-        method: 'GET',
-        path: '/checkout'
-      },
-      {
-        method: 'GET',
-        path: '/payment'
-      },
-      {
-        method: 'GET',
-        path: '/order/{id}'
-      },
-      {
-        method: 'GET',
-        path: '/mission'
-      },
-      {
-        method: 'GET',
-        path: '/mindless'
-      },
-      {
-        method: 'GET',
-        path: '/contact'
-      },
-      {
-        method: 'GET',
-        path: '/tos'
       }
     ]
   }
@@ -108,6 +79,7 @@ Server.register([Inert], (err) => {
 
 Server.start((err) => {
     if (err) throw err
-    Utils.MindCtrlIsRunning(Server.info.uri)
+
+    console.log('Dub...dub...dub...dot...Jon Ortiz...dot...me is running @', Server.info.uri, 'on', CreateDate())
 
 })
