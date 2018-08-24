@@ -34,35 +34,23 @@ class Nav extends React.Component {
 
     return (
       <nav>
-        <div className="site_header">
+        <div className="logo">
+          <IndexLink to="/">Jon Ortiz</IndexLink>
           <div>
-            <IndexLink className="home_link" to="/">
-              <span className="site_logo">Jon Ortiz</span>
-            </IndexLink>
-          </div>
-          <div>
-            <span onClick={this.toggle} className={(this.state.toggle) ? 'icon__menu show' : 'icon__menu' } />
+            <span onClick={this.toggle}
+              className={(this.state.toggle) ?
+                'icon__menu show' : 'icon__menu' } />
           </div>
         </div>
-        {<div className={(this.state.toggle) ? 'site_dropdown show' : 'site_dropdown'}>
-          {pathname !== '/' && <div>
-            <IndexLink to="/">Home</IndexLink>
-          </div>}
-          <div>
-            <Link to="/experience">Experience</Link>
-          </div>
-          <div>
-            <Link to="/skillsets">Skillsets</Link>
-          </div>
-          <div>
-            <Link to="/education">Education</Link>
-          </div>
-          <div>
-            <Link to="/resume">Resume</Link>
-          </div>
-          <div>
-            <Link to="/contact">Contact</Link>
-          </div>
+        {<div className={(this.state.toggle) ?
+          'menu show' : 'menu'}>
+          {pathname !== '/' &&
+          <IndexLink to="/">Home</IndexLink>}
+          <Link to="/experience">Experience</Link>
+          <Link to="/skillsets">Skillsets</Link>
+          <Link to="/education">Education</Link>
+          <Link to="/resume">Resume</Link>
+          <Link to="/contact">Contact</Link>
         </div>}
       </nav>);
     }

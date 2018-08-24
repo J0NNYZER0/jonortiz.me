@@ -1,7 +1,6 @@
 nav {
   display: flex;
   flex-direction: column;
-  width: 267px;
   align-items: center;
   box-shadow: 0 0 18px 0 rgba(0,0,6,.66);
   z-index: 2;
@@ -11,30 +10,29 @@ nav {
 nav > div {
   width: 100%;
 }
-nav > div:first-child {
+.logo {
   min-height: 100px;
+  font-size: 3em;
 }
-.site_header div:first-child {
-  height: 2.75em;
+.logo a {
+  margin-left: 30px;
+  margin-right: 30px;
 }
-.site_logo {
-  font-size: 2.75em;
-}
-.site_dropdown.show {
+.menu.show {
   display: block;
 }
-.site_dropdown > div {
-  border-bottom: 1px solid #999;
+.menu > a {
 }
-.site_dropdown > div:last-child {
-  border-bottom: none;
-}
-.site_dropdown > div a {
+.menu > a {
   display: block;
   padding: 10px 0;
   user-select: none;
   font-size: 1.75em;
   text-align: center;
+  border-bottom: 1px solid #999;
+}
+.menu > a:last-child {
+  border-bottom: none;
 }
 
 @media only screen  and (min-width : 320px) and (max-width : 1224px)  {
@@ -42,18 +40,19 @@ nav {
   width: 100%;
   border-bottom: 1px solid #fff;
 }
-.site_header {
+.logo {
   display: flex;
   flex: 1;
   align-items: center;
 }
-.site_header div:first-child {
+.logo a {
   flex: 1;
+  margin-left: 30px;
 }
-.site_dropdown {
+.menu {
   display: none;
 }
-.site_dropdown.show div:first-child a {
+.menu.show a:first-child {
   border-top: 1px solid #FFF;
 }
 .home_link {
@@ -67,7 +66,8 @@ nav {
   background-size: 40px;
   background-position: center;
   background-repeat: no-repeat;
-  margin-right: 20px;
+  margin-right: 30px;
+  cursor: pointer;
 }
 .icon__menu.show {
   background-image: url('https://s3.us-east-2.amazonaws.com/ui-icons/x.svg');
@@ -78,16 +78,13 @@ nav {
 nav {
   border-right: 1px solid #fff;
 }
-.site_header {
+.logo {
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
 }
-.site_dropdown {
+.menu {
   width: 100%;
-}
-.site_logo {
-  display: block;
 }
 }
