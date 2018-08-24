@@ -1,5 +1,6 @@
 import React from 'react';
 import Footer from '../common/Footer';
+import data from '../../data/education.json';
 
 class Education extends React.Component {
   render() {
@@ -7,10 +8,7 @@ class Education extends React.Component {
       <main className="education">
         <section>
           <h1>Education</h1>
-          <p>
-            BFA, Graphic Design 3.84<br />
-            Montserrat College of Art
-          </p>
+          <p dangerouslySetInnerHTML={{__html: data.bachelors}} />
         </section>
         <Footer />
       </main>

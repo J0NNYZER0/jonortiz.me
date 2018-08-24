@@ -6,10 +6,6 @@ class Job extends React.Component {
 
     super(props)
 
-    this.state = {
-      show: false
-    }
-
     this.toggle = this.toggle.bind(this)
   }
 
@@ -23,6 +19,7 @@ class Job extends React.Component {
       existing = document.getElementsByClassName(className),
       idToCheck = parentElement.nextSibling.childNodes.item(id).id,
       clone = document.getElementById(id).cloneNode(true);
+
     button.className = 'button selected';
     otherButton.className = 'button';
     tabContainer.className = className;

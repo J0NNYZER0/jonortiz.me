@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Footer from '../common/Footer';
+import data from '../../data/resume.json';
 
 class Resume extends React.Component {
 
@@ -10,7 +11,7 @@ class Resume extends React.Component {
         <section>
           <h1>Resume</h1>
           <div>
-            <a className="download-resume" target="_blank" href="https://s3.us-east-2.amazonaws.com/jonortiz.me/resume/jon-ortiz-2018.pdf" />
+            <a className="download-resume" target="_blank" href={data.linkToPdf} />
           </div>
         </section>
         <Footer />

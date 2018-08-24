@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Job from '../common/Job';
 import Footer from '../common/Footer';
-import experienceData from '../../data/experience.json';
+import data from '../../data/experience.json';
 
 class Experience extends React.Component {
 
@@ -15,7 +15,7 @@ class Experience extends React.Component {
       <main className="experience">
         <section>
           <h1>Experience</h1>
-          {experienceData.map((el, idx) => <Job key={idx} idx={idx} experience={el} />)}
+          {data.map((el, idx) => <Job key={idx} idx={idx} experience={el} />)}
         </section>
         <Footer />
       </main>
