@@ -42,6 +42,26 @@ const Hapi = require('hapi'),
       {
         method: 'GET',
         path: '/home'
+      },
+      {
+        method: 'GET',
+        path: '/experience'
+      },
+      {
+        method: 'GET',
+        path: '/skillsets'
+      },
+      {
+        method: 'GET',
+        path: '/education'
+      },
+      {
+        method: 'GET',
+        path: '/resume'
+      },
+      {
+        method: 'GET',
+        path: '/contact'
       }
     ]
   }
@@ -80,6 +100,6 @@ Server.register([Inert], (err) => {
 Server.start((err) => {
     if (err) throw err
 
-    console.log('Dub...dub...dub...dot...Jon Ortiz...dot...me is running @', Server.info.uri, 'on', CreateDate())
+    console.log('Dub dub dub dot Jon Ortiz dot me is running @', Server.info.uri, 'on', CreateDate())
 
 })

@@ -5,24 +5,12 @@ import {connect} from 'react-redux';
 import { withRouter } from 'react-router';
 import * as messageActions from '../actions/messageActions';
 import * as resumeActions from '../actions/resumeActions';
-
-import SiteNavigation from './common/SiteNavigation';
+import Nav from './common/Nav';
+import Modal from './common/Modal';
 
 class App extends React.Component {
   constructor(props) {
-      super(props);
-      this.state = {
-        scrollToElement: null
-      }
-
-      this.setElementToScrollTo = this.setElementToScrollTo.bind(this);
-
-  }
-
-  setElementToScrollTo(el,callback) {
-    this.setState({scrollToElement: el})
-    if (callback)
-      callback()
+    super(props);
   }
 
   render() {
@@ -31,8 +19,9 @@ class App extends React.Component {
 
     return (
       <div className="layout">
-        <SiteNavigation pathname={location.pathname} setElementToScrollTo={this.setElementToScrollTo} />
-        {React.cloneElement(this.props.children, { scrollToElement: this.state.scrollToElement })}
+        <Modal />
+        <Nav pathname={location.pathname} />
+        {React.cloneElement(this.props.children, { })}
       </div>
     );
   }

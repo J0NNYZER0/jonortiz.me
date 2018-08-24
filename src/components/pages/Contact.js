@@ -3,13 +3,12 @@ import PageTitle from '../common/PageTitle';
 import ContactForm from '../common/forms/Contact';
 import Footer from '../common/Footer';
 
-class ContactPage extends React.Component {
+class Contact extends React.Component {
   render() {
     return (
       <main>
         <section>
           <PageTitle title="Contact" />
-          <h2>Send us a message</h2>
           <ContactForm />
         </section>
         <Footer />
@@ -18,4 +17,4 @@ class ContactPage extends React.Component {
   }
 }
 
-export default ContactPage;
+export default Contact;

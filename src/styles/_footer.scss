@@ -2,29 +2,37 @@ footer {
   min-height: 100px;
   display: flex;
   align-items: center;
+  position: relative;
   border-top: 1px solid #fff;
   background-color: #444;
   font-family: 'NeutrafaceDisplayTitling';
-  font-size: 1.25em;
 }
-footer ul {
+footer div.menu__social,
+footer div.site_love,
+footer div.company_info
+ {
   flex: auto;
   align-items: center;
   display: flex;
   height: 40px;
 }
-footer ul.menu__social {
-  margin-top: 20px;
+footer div.menu__social {
+  margin-top: 10px;
 }
-.menu__social > li,
-.site_love > li {
+.menu__social > span,
+.site_love > span {
   display: inline-block;
+  margin-left: 10px;
+  margin-right: 10px;
 }
-ul.site_love li {
-  width: 100%;
+div.site_love span {
+  width: 20px;
   text-align: center;
 }
-ul.site_love li a {
+div.menu__social span a {
+
+}
+div.site_love span a {
   cursor: pointer;
 }
 div.love_message {
@@ -38,6 +46,10 @@ div.love_message {
   background-color: #fff;
   z-index: 12;
   box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.5), 0 -9px 30px 0 rgba(0, 0, 0, 0.5);
+}
+div.love_message p {
+  margin: 20px;
+  text-align: left;
 }
 div.love_message.show {
   display: block;
@@ -57,7 +69,7 @@ div.love_message:after {
 .menu__social span,
 .site_love span {
   height: 30px;
-  width: 60px;
+  width: 30px;
   display: block;
   background-size: 30px;
   background-repeat: no-repeat;
@@ -71,51 +83,57 @@ span.copyright {
   display: block;
   font-family: 'NeutrafaceDisplayTitling';
 }
-.home footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-}
 
 @media only screen and (min-width : 320px) and (max-width : 700px) {
 footer {
   flex-direction: column;
 }
-footer ul:first-child {
+footer div:first-child {
   margin-bottom: 0;
 }
-footer ul:last-child {
+footer div:last-child {
   margin-top: 0;
 }
 }
 
-@media only screen  and (min-width : 641px) and (max-width : 1420px) {
-
-footer ul.menu__social,
-footer ul.site_love {
+@media only screen  and (min-width : 700px) and (max-width : 1420px) {
+footer div.menu__social {
+  margin-left: 10px;
+}
+footer div.menu__social,
+footer div.company_info {
   text-align: center;
 }
-footer ul.company_info {
+footer div.site_love {
+  justify-content: center;
+}
+footer div.company_info {
   display: flex;
   align-items: center;
 }
-footer ul.company_info li {
+footer div.company_info span {
   flex: auto;
 }
-footer ul.company_info li:nth-child(2) {
+footer div.company_info span:nth-child(2) {
   width: 140px;
 }
 span.copyright {
   text-align: right;
   margin-right: 20px;
 }
-}
-
-@media only screen  and (min-width : 701px) {
-footer ul.menu__social {
+footer div.menu__social {
   margin-top: 0px;
 }
 div.love_message:after {
   left: calc(50% - -90px);
+}
+}
+
+@media only screen  and (min-width : 1224px) and (max-width : 1420px) {
+div.love_message {
+  width: calc(100% - 53px);
+}
+div.love_message:after {
+    left: calc(50% - -86px);
 }
 }
