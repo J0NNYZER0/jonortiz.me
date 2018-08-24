@@ -67,6 +67,7 @@ div.love_message:after {
   background-position: 50%;
 }
 .site_love span {
+  cursor: pointer;
   background-image: url(https://s3.us-east-2.amazonaws.com/ui-icons/heart.svg);
 }
 .menu__social > a:first-child {

@@ -50,9 +50,7 @@ class Footer extends React.Component {
           </a>
         </div>
         <div className="site_love">
-          <a onMouseEnter={this.toggle} onMouseLeave={this.toggle} target="_blank">
-            <span />
-          </a>
+          <span onClick={this.toggle} />
         </div>
         <div className="company_info">
           <span className="copyright">&copy; {year} Jon Ortiz</span>
