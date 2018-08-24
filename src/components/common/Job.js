@@ -33,24 +33,26 @@ class Job extends React.Component {
       <div className="job">
         <div>
           <div className="job_date">
-            <h2>{experience.from} {experience.to && "- " + experience.to}</h2>
+            <h4>{experience.from} {experience.to && "- " + experience.to}</h4>
           </div>
         </div>
         <div className="job_header">
           <div className="job_title">
-            <h3>{experience.title} @ {experience.company}</h3>
+            <h3>{experience.title}</h3>
+            <h3>&nbsp;&nbsp;@&nbsp;&nbsp;</h3>
+            <h3>{experience.company}</h3>
           </div>
           <div className="job_location">
             <h3>{experience.city}, {experience.state}</h3>
           </div>
         </div>
         <div className="project_details">
+          <h4>Projects</h4>
           <ul>
-            <li><h2>Projects</h2></li>
             {experience.projects.map(el => <li>{el}</li>)}
           </ul>
+          <h4>Skills</h4>
           <ul>
-            <li><h2>Skills</h2></li>
             {experience.responsibilities.map(el => <li>{el}</li>)}
           </ul>
         </div>

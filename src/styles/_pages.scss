@@ -39,7 +39,7 @@
 }
 .experience {
   .job {
-    width: calc(100% - 200px);
+    width: calc(100% - 140px);
     margin: 0 auto;
   }
   .job_header {
@@ -52,13 +52,18 @@
     flex: 1;
     text-align: center;
   }
+  .job_title {
+    display: flex;
+    white-space: nowrap;
+  }
+  .project_details {
+    width: 100%;
+  }
   .project_details ul li {
     line-height: 1.25em;
     margin-bottom: 1.5em;
     text-align: left;
-  }
-  .project_details ul li h2 {
-    font-size: 1.5em;
+    list-style-type: square;
   }
   a.download-resume {
     display: block;
@@ -106,6 +111,8 @@
       margin: 0 auto;
       .button_wrapper {
         display: flex;
+        width: 100%;
+        margin-top: 30px;
       }
     }
     .project_details {
@@ -115,17 +122,35 @@
 }
 
 @media only screen  and (min-width : 320px) and (max-width : 700px) {
+  h1 {
+    text-align: center;
+  }
   .home {
     section > div {
       min-height: calc(100vh - 361px);
     }
   }
   .experience {
-    .job_header {
-      flex-direction: column;
+    .job {
+      border-bottom: 1px solid white;
+      .job_header {
+        flex-direction: column;
+      }
+      .job_title {
+        flex-direction: column;
+      }
+      .job_title h3 {
+        margin-bottom: 10px;
+      }
+      .job_location {
+        margin-top: 10px;
+      }
+      .button_wrapper {
+        flex-direction: column;
+      }
     }
-    .job_location {
-      margin-top: 10px;
+    .job:last-child {
+      border-bottom: 0;
     }
   }
   .education {
