@@ -56,9 +56,11 @@
     display: flex;
     white-space: nowrap;
   }
+  .project_details_tab_container,
   .project_details {
     width: 100%;
   }
+  .project_details_tab_container ul li,
   .project_details ul li {
     line-height: 1.25em;
     margin-bottom: 1.5em;
@@ -147,6 +149,9 @@
       }
       .button_wrapper {
         flex-direction: column;
+        .button {
+          margin: 10px 0;
+        }
       }
     }
     .job:last-child {
@@ -157,6 +162,12 @@
     p {
       height: calc(100vh - 362px);
     }
+  }
+}
+
+@media only screen  and (min-width : 701px) {
+  .button {
+    margin: 0 10px;
   }
 }
 
@@ -173,6 +184,12 @@
     .button_wrapper {
       display: none;
     }
+  }
+}
+
+@media only screen  and (min-width : 901px) {
+  .project_details_tab_container {
+    display: none;
   }
 }
 

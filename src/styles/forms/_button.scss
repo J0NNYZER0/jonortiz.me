@@ -21,9 +21,11 @@ button[disabled]{
 	text-shadow: none;
 	border-radius: 6px;
 }
+a.button.selected,
 a.button:hover,
+button.button.selected,
 button.button:hover {
-	color: #ccc;
+	color: #FFF;
   background-color: #333;
 }
 a.button {

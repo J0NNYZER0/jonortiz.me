@@ -1,33 +1,49 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 class Job extends React.Component {
 
   constructor(props) {
+
     super(props)
 
-    this.getProjectDetails = this.getProjectDetails.bind(this)
+    this.state = {
+      show: false
+    }
+
+    this.toggle = this.toggle.bind(this)
   }
 
-  getProjectDetails() {
-    const { experience } = this.props;
+  toggle(e, id) {
 
-    return(
-      <div className="project_details">
-        <ul>
-          <li>Project</li>
-          {experience.projects.map(el => <li>{el}</li>)}
-        </ul>
-        <ul>
-          <li>Responsibilities</li>
-          {experience.responsibilities.map(el => <li>{el}</li>)}
-        </ul>
-      </div>
-    )
+    let button = e.target,
+      otherButton = (button.previousSibling) ? button.previousSibling : button.nextSibling,
+      parentElement = button.parentElement,
+      tabContainer = document.createElement('div'),
+      className = 'project_details_tab_container',
+      existing = document.getElementsByClassName(className),
+      idToCheck = parentElement.nextSibling.childNodes.item(id).id,
+      clone = document.getElementById(id).cloneNode(true);
+    button.className = 'button selected';
+    otherButton.className = 'button';
+    tabContainer.className = className;
+    tabContainer.innerHTML = '';
+
+    while(existing.length > 0){
+        existing[0].parentNode.removeChild(existing[0]);
+    }
+
+    parentElement.parentNode.insertBefore(tabContainer, parentElement.nextSibling);
+
+    tabContainer.appendChild(clone);
+
+    if (idToCheck === id) {
+      button.className = 'button';
+      existing[0].parentNode.removeChild(existing[0]);
+    }
   }
 
   render() {
-    const { experience } = this.props;
+    const { idx, experience } = this.props;
 
     return (
       <div className="job">
@@ -46,27 +62,23 @@ class Job extends React.Component {
             <h3>{experience.city}, {experience.state}</h3>
           </div>
         </div>
+        <div className="button_wrapper">
+          <button className="button" onClick={e => this.toggle(e, 'a_' + idx)}>Projects</button>
+          <button className="button" onClick={e => this.toggle(e, 'b_' + idx)}>Skills</button>
+        </div>
         <div className="project_details">
           <h4>Projects</h4>
-          <ul>
-            {experience.projects.map(el => <li>{el}</li>)}
+          <ul id={'a_' + idx}>
+            {experience.projects.map((el, i) => <li key={i}>{el}</li>)}
           </ul>
           <h4>Skills</h4>
-          <ul>
-            {experience.responsibilities.map(el => <li>{el}</li>)}
+          <ul id={'b_' + idx}>
+            {experience.responsibilities.map((el, i) => <li key={i}>{el}</li>)}
           </ul>
-        </div>
-        <div className="button_wrapper">
-          <button className="button" onClick={() => {}}>Projects</button>
-          <button className="button" onClick={() => {}}>Skills</button>
         </div>
       </div>
     );
   }
 }
-
-Job.propTypes = {
-  experience: PropTypes.object.required
-};
 
 export default Job;
