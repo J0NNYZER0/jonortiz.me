@@ -36,7 +36,7 @@ class Nav extends React.Component {
     return (
       <nav>
         <div className="logo">
-          {site.map(el => <IndexLink to="/">{el.title}</IndexLink>)}
+          {site.map((el,idx) => <IndexLink key={idx} to="/">{el.title}</IndexLink>)}
           <div>
             <span onClick={this.toggle}
               className={(this.state.toggle) ?
