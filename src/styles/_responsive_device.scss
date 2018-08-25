@@ -55,12 +55,19 @@ and (max-device-width : 667px) {
   .home section > div {
     min-height: calc(100vh - 776px);
   }
-  .home section > div > div.profile_picture {
+  .home span.profile_picture {
     width: 300px;
     height: 300px;
-    margin-bottom: 0;
+    margin: auto;
     background-size: 300px;
     background-position: 50% 70%;
+  }
+  .home h1 {
+    font-size: 15vw;
+  }
+  p {
+    font-size: 3em;
+    line-height: 1.5em;
   }
 }
 
