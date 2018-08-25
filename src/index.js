@@ -12,6 +12,7 @@ import * as home from './actions/homeActions';
 import * as message from './actions/messageActions';
 import * as resume from './actions/resumeActions';
 import * as skillset from './actions/skillsetActions';
+import * as socialmedia from './actions/socialMediaActions';
 require('./favicon.ico'); // Tell webpack to load favicon.ico
 import './styles/all.scss'; // Yep, that's right. You can
 import { syncHistoryWithStore } from 'react-router-redux';
@@ -27,6 +28,7 @@ store.dispatch(home.load());
 store.dispatch(message.load());
 store.dispatch(resume.load());
 store.dispatch(skillset.load());
+store.dispatch(socialmedia.load());
 
 history.listen((location) => {
   if (window.ga)

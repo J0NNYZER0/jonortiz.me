@@ -61,3 +61,12 @@ export const SKILLSET = {
   LOAD: '/skillset',
   UPDATE: '/skillset/update'
 }
+
+export const SOCIALMEDIA = {
+  DELETE: '/socialmedia/delete',
+  DETAIL: '/socialmedia/detail',
+  INSERT: '/socialmedia/insert',
+  LIST: '/socialmedia/list',
+  LOAD: '/socialmedia',
+  UPDATE: '/socialmedia/update'
+}

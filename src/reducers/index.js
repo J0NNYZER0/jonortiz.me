@@ -7,6 +7,7 @@ import homeReducer from './homeReducer';
 import messageReducer from './messageReducer';
 import resumeReducer from './resumeReducer';
 import skillsetReducer from './skillsetReducer';
+import socialMediaReducer from './socialMediaReducer';
 const rootReducer = combineReducers({
   routing: routerReducer,
   contact: contactReducer,
@@ -15,7 +16,8 @@ const rootReducer = combineReducers({
   home: homeReducer,
   messages: messageReducer,
   resume: resumeReducer,
-  skillset: skillsetReducer
+  skillset: skillsetReducer,
+  social_media: socialMediaReducer
 });
 
 export default rootReducer;

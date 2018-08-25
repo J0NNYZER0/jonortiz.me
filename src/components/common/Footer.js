@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import {connect} from 'react-redux';
 
 class Footer extends React.Component {
   constructor(props) {
@@ -15,8 +17,12 @@ class Footer extends React.Component {
   }
 
   render() {
+
+    const { social_media } = this.props;
+
     let today = new Date(),
     year = today.getFullYear();
+
     return (
       <footer>
         <div className={(this.state.toggle) ? 'love_message show' : 'love_message'}>
@@ -27,27 +33,11 @@ class Footer extends React.Component {
           </p>
         </div>
         <div className="menu__social">
-          <a href="https://github.com/J0NNYZER0" target="_blank">
-            <span style={{ backgroundImage: 'url(https://s3.us-east-2.amazonaws.com/ui-icons/white/github.svg' }} />
-          </a>
-          <a href="https://dribbble.com/J0NNYZER0" target="_blank">
-            <span style={{ backgroundImage: 'url(https://s3.us-east-2.amazonaws.com/ui-icons/white/dribbble.svg' }} />
-          </a>
-          <a href="https://medium.com/@J0NNYZER0" target="_blank">
-            <span style={{ backgroundImage: 'url(https://s3.us-east-2.amazonaws.com/ui-icons/medium.svg' }} />
-          </a>
-          <a href="https://www.facebook.com/mindctrlindustries/" target="_blank">
-            <span style={{ backgroundImage: 'url(https://s3.us-east-2.amazonaws.com/ui-icons/facebook.svg' }} />
-          </a>
-          <a href="https://www.instagram.com/jon__ortiz/" target="_blank">
-            <span style={{ backgroundImage: 'url(https://s3.us-east-2.amazonaws.com/ui-icons/instagram.svg' }} />
-          </a>
-          <a href="https://twitter.com/J0NNYZER0" target="_blank">
-            <span style={{ backgroundImage: 'url(https://s3.us-east-2.amazonaws.com/ui-icons/twitter.svg' }} />
-          </a>
-          <a href="https://mind-ctrl-industries.tumblr.com" target="_blank">
-            <span style={{ backgroundImage: 'url(https://s3.us-east-2.amazonaws.com/ui-icons/tumblr.svg' }} />
-          </a>
+          {social_media.map((el, idx) => {
+            return <a key={idx} href={el.url} target="_blank">
+              <span style={{ backgroundImage: el.image }} />
+            </a>
+          })}
         </div>
         <div className="site_love">
           <span onClick={this.toggle} />
@@ -60,12 +50,14 @@ class Footer extends React.Component {
   }
 }
 
-export default Footer;
+Footer.propTypes = {
+  social_media: PropTypes.array.isRequired
+};
 
+function mapStateToProps(state) {
+  return {
+    social_media: state.social_media
+  };
+}
 
-/*<div>
-
-
-
-
-*/
+export default connect(mapStateToProps)(Footer);
