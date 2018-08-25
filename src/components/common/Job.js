@@ -12,7 +12,7 @@ class Job extends React.Component {
   toggle(e, id) {
 
     let button = e.target,
-      otherButton = (button.previousSibling) ? button.previousSibling : button.nextSibling,
+      allSelectedButtons = document.getElementsByClassName('button selected'),
       parentElement = button.parentElement,
       tabContainer = document.createElement('div'),
       className = 'project_details_tab_container',
@@ -20,23 +20,26 @@ class Job extends React.Component {
       idToCheck = parentElement.nextSibling.childNodes.item(id).id,
       clone = document.getElementById(id).cloneNode(true);
 
-    button.className = 'button selected';
-    otherButton.className = 'button';
+    while (allSelectedButtons.length)
+      allSelectedButtons[0].className = 'button';
+
     tabContainer.className = className;
     tabContainer.innerHTML = '';
 
-    while(existing.length > 0){
-        existing[0].parentNode.removeChild(existing[0]);
-    }
+    while(existing.length > 0)
+      existing[0].parentNode.removeChild(existing[0]);
 
     parentElement.parentNode.insertBefore(tabContainer, parentElement.nextSibling);
 
     tabContainer.appendChild(clone);
 
+    button.className = 'button selected';
+
     if (idToCheck === id) {
       button.className = 'button';
       existing[0].parentNode.removeChild(existing[0]);
     }
+
   }
 
   render() {
