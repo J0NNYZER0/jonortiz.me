@@ -11,6 +11,7 @@ import * as experience from './actions/experienceActions';
 import * as home from './actions/homeActions';
 import * as message from './actions/messageActions';
 import * as resume from './actions/resumeActions';
+import * as site from './actions/siteActions';
 import * as skillset from './actions/skillsetActions';
 import * as socialmedia from './actions/socialMediaActions';
 require('./favicon.ico'); // Tell webpack to load favicon.ico
@@ -27,6 +28,7 @@ store.dispatch(experience.load());
 store.dispatch(home.load());
 store.dispatch(message.load());
 store.dispatch(resume.load());
+store.dispatch(site.load());
 store.dispatch(skillset.load());
 store.dispatch(socialmedia.load());
 

@@ -53,6 +53,15 @@ export const RESUME = {
   UPDATE: '/resume/update'
 }
 
+export const SITE = {
+  DELETE: '/site/delete',
+  DETAIL: '/site/detail',
+  INSERT: '/site/insert',
+  LIST: '/site/list',
+  LOAD: '/site',
+  UPDATE: '/site/update'
+}
+
 export const SKILLSET = {
   DELETE: '/skillset/delete',
   DETAIL: '/skillset/detail',

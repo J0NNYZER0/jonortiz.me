@@ -18,6 +18,7 @@ class Home extends React.Component {
           {home.map((section,idx) => {
 
             return <div key={idx}>
+              <div className="profile_picture" style={{ backgroundImage: section.profile_pic }} />
               <h1>{section.title}</h1>
               <p dangerouslySetInnerHTML={{__html: section.tagline}} />
             </div>

@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, IndexLink } from 'react-router';
+import {connect} from 'react-redux';
 
 class Nav extends React.Component {
 
@@ -30,12 +31,12 @@ class Nav extends React.Component {
 
   render() {
 
-    const { pathname } = this.props;
+    const { site, pathname } = this.props;
 
     return (
       <nav>
         <div className="logo">
-          <IndexLink to="/">Jon Ortiz</IndexLink>
+          {site.map((el, idx) => <IndexLink to="/">{el.title}</IndexLink>)}
           <div>
             <span onClick={this.toggle}
               className={(this.state.toggle) ?
@@ -57,7 +58,15 @@ class Nav extends React.Component {
 }
 
 Nav.propTypes = {
+  site: PropTypes.array.isRequired,
   pathname: PropTypes.string.isRequired
 };
 
-export default Nav;
+function mapStateToProps(state) {
+  return {
+    social_media: state.social_media,
+    site: state.site
+  };
+}
+
+export default connect(mapStateToProps)(Nav);

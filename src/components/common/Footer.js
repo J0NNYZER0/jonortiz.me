@@ -18,7 +18,7 @@ class Footer extends React.Component {
 
   render() {
 
-    const { social_media } = this.props;
+    const { social_media, site } = this.props;
 
     let today = new Date(),
     year = today.getFullYear();
@@ -43,7 +43,7 @@ class Footer extends React.Component {
           <span onClick={this.toggle} />
         </div>
         <div className="company_info">
-          <span className="copyright">&copy; {year} Jon Ortiz</span>
+          {site.map((el, idx) => <span key={idx} className="copyright">&copy; {year} {el.title}</span>)}
         </div>
       </footer>
     );
@@ -51,12 +51,14 @@ class Footer extends React.Component {
 }
 
 Footer.propTypes = {
-  social_media: PropTypes.array.isRequired
+  social_media: PropTypes.array.isRequired,
+  site: PropTypes.array.isRequired
 };
 
 function mapStateToProps(state) {
   return {
-    social_media: state.social_media
+    social_media: state.social_media,
+    site: state.site
   };
 }
 
