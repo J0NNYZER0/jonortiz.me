@@ -3,7 +3,7 @@
 and (min-device-width : 375px)
 and (max-device-width : 667px) {
   .layout {
-    min-height: calc(100vh - 200px);
+    min-height: calc(100vh - 180px);
   }
   .logo {
     min-height: 200px;
@@ -46,7 +46,7 @@ and (max-device-width : 667px) {
     margin-right: auto;
   }
   .home section > div {
-    min-height: calc(100vh - 657px);
+    min-height: calc(100vh - 776px);
   }
 }
 
