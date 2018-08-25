@@ -37,14 +37,10 @@ class Nav extends React.Component {
       <nav>
         <div className="logo">
           {site.map((el,idx) => <IndexLink key={idx} to="/">{el.title}</IndexLink>)}
-          <div className="menu_wrapper">
-            <div onClick={this.toggle} id="nav-icon" className={(this.state.toggle) ?
-              'open' : '' }>
-              <span />
-              <span />
-              <span />
-              <span />
-            </div>
+          <div>
+            <span onClick={this.toggle}
+              className={(this.state.toggle) ?
+                'icon__menu show' : 'icon__menu' } />
           </div>
         </div>
         {<div className={(this.state.toggle) ?
