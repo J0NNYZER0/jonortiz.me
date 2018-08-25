@@ -1,81 +1,44 @@
-@media only screen and (min-device-width : 320px) {
-body {
+/*iPhone 6, 7, & 8 in landscape*/
+@media only screen
+and (min-device-width : 375px)
+and (max-device-width : 667px) {
+  .layout {
+    min-height: calc(100vh - 200px);
+  }
+  .logo {
+    min-height: 200px;
+    font-size: 6em;
+  }
+  .icon__menu {
+    width: 90px;
+    height: 90px;
+    background-size: 80px;
+  }
+  .icon__menu.show {
+    background-size: 60px;
+  }
+  .menu > a {
+    padding: 30px 0;
+    font-size: 5em;
+  }
+  .footer {
+    min-height: 200px;
+    flex-direction: column;
+  }
+  .menu__social span, .site_love span {
+    height: 60px;
+    width: 60px;
+    background-size: 60px;
+  }
+  .home section > div {
+    min-height: calc(100vh - 657px);
+  }
+}
 
-}
-}
+/*iPhone X in portrait & landscape*/
+@media only screen
+and (min-device-width : 375px)
+and (max-device-width : 812px)
+and (-webkit-device-pixel-ratio : 3) {
 
-@media only screen and (min-device-width : 320px) and (max-device-width : 736px) {
-nav {
-  font-size: 2em;
-}
-.menu__top li:first-child,
-.menu__top li:last-child {
-  width: 150px;
-}
-.icon__logo--nav, .icon__menu {
-  width: 150px;
-  height: 150px;
-  background-size: 120px;
-}
-.icon__menu {
-  background-size: 80px;
-}
-.menu__main li a {
-  padding: 50px 0;
-}
-.menu__social span {
-  height: 100px;
-  width: 120px;
-  background-size: 80px;
-  background-position: 50%;
-  padding: 30px;
-}
-footer {
-  font-size: 2em;
-}
-footer ul.footer__item--menu li a {
-  padding: 0 35px;
-  line-height: 110px;
-}
-.footer__item--company_info {
-  height: 100px;
-}
-.footer__item--company_info li:last-child {
-  vertical-align: middle;
-}
-footer ul.footer__item--company_info li span.copyright {
-  height: 100px;
-  line-height: 100px;
-}
-.footer__item--company_info li:last-child a {
-  height: 100px;
-}
-footer ul.footer__item--company_info li span.icon__logo--footer {
-  width: 100px;
-  height: 100px;
-  background-size: 75px 75px;
-}
-/***ALERTS****/
-ul.cart_alert {
-  font-size: 5em;
-}
-.cart_alert__item span.icon__bag {
-  background: transparent url(/assets/icon-bag.svg) 50% 50%/80px 80px no-repeat;
-}
-.cart_alert__item span.icon__bag {
-  width: 80px;
-  height: 80px;
-}
-/***SHOP DETAIL***/
-.shop_detail {
-  flex-direction: column;
-}
-.number__input > li {
-  height: 69px;
-}
-.shop__list li {
-  width: 800px;
-  height: 950px;
-  background-size: 800px;
-}
 }
