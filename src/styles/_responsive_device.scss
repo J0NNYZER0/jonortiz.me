@@ -36,6 +36,14 @@ and (max-device-width : 667px) {
   .menu__social > a {
     margin-right: 30px;
   }
+  div.love_message {
+    bottom: 250px;
+  }
+  div.love_message:after {
+    left: calc(50% - 40px);
+    bottom: -37px;
+    border-width: 40px;
+  }
   footer div.site_love {
     margin-top: 30px;
     margin-bottom: 30px;
