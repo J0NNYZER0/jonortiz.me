@@ -1,10 +1,7 @@
 import React from 'react';
-import {bindActionCreators} from 'redux';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import { withRouter } from 'react-router';
-import * as messageActions from '../actions/messageActions';
-import * as resumeActions from '../actions/resumeActions';
 import Nav from './common/Nav';
 import Modal from './common/Modal';
 
@@ -32,20 +29,4 @@ App.propTypes = {
   location: PropTypes.object
 };
 
-function mapStateToProps(state) {
-  return {
-    messages: state.messages,
-    resume: state.resumes
-  };
-}
-
-function mapDispatchToProps(dispatch) {
-  return {
-    actions: {
-      message: bindActionCreators(messageActions, dispatch),
-      resume: bindActionCreators(resumeActions, dispatch)
-    }
-  };
-}
-
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
+export default withRouter(connect(null, null)(App));

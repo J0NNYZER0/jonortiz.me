@@ -2,11 +2,11 @@
 import * as actionTypes from '../constants/actionTypes';
 import initialState from './initialState';
 
-const resumeReducer = (state = initialState.resume, action) => {
+const homeReducer = (state = initialState.home, action) => {
 
   switch (action.type) {
 
-    case actionTypes.RESUME.LOAD:
+    case actionTypes.HOME.LOAD:
       return action.data
 
     default:
@@ -14,4 +14,4 @@ const resumeReducer = (state = initialState.resume, action) => {
   }
 }
 
-export default resumeReducer;
+export default homeReducer;

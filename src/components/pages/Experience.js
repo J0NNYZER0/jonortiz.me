@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {connect} from 'react-redux';
 import Job from '../common/Job';
 import Footer from '../common/Footer';
-import data from '../../data/experience.json';
 
 class Experience extends React.Component {
 
@@ -11,11 +11,14 @@ class Experience extends React.Component {
   }
 
   render() {
+
+    const { experience } = this.props;
+
     return (
       <main className="experience">
         <section>
           <h1>Experience</h1>
-          {data.map((el, idx) => <Job key={idx} idx={idx} experience={el} />)}
+          {experience.map((el, idx) => <Job key={idx} idx={idx} experience={el} />)}
         </section>
         <Footer />
       </main>
@@ -24,7 +27,13 @@ class Experience extends React.Component {
 }
 
 Experience.propTypes = {
-  title: PropTypes.string
+  experience: PropTypes.array.isRequired
 };
 
-export default Experience;
+function mapStateToProps(state) {
+  return {
+    experience: state.experience
+  };
+}
+
+export default connect(mapStateToProps)(Experience);

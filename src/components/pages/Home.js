@@ -1,6 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import {connect} from 'react-redux';
 import Footer from '../common/Footer';
-import data from '../../data/home.json';
 
 class Home extends React.Component {
 
@@ -9,14 +10,18 @@ class Home extends React.Component {
   }
 
   render() {
+    const { home } = this.props;
 
     return (
       <main className="home">
         <section>
-          <div>
-            <h1>{data.title}</h1>
-            <p dangerouslySetInnerHTML={{__html: data.tagline}} />
-          </div>
+          {home.map((section,idx) => {
+
+            return <div key={idx}>
+              <h1>{section.title}</h1>
+              <p dangerouslySetInnerHTML={{__html: section.tagline}} />
+            </div>
+          })}
           {/*<a className="animated_down_arrow"><span className="down-arrow" /></a>*/}
         </section>
         <Footer />
@@ -25,4 +30,14 @@ class Home extends React.Component {
   }
 }
 
-export default Home;
+Home.propTypes = {
+  home: PropTypes.array.isRequired
+};
+
+function mapStateToProps(state) {
+  return {
+    home: state.home
+  };
+}
+
+export default connect(mapStateToProps)(Home);

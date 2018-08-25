@@ -1,4 +1,9 @@
 export default {
-  resumes: [],
-  messages: []
+  contact: [],
+  education: [],
+  experience: [],
+  home: [],
+  messages: [],
+  resume: [],
+  skillset: []
 };

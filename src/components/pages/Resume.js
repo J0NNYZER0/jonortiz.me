@@ -10,9 +10,11 @@ class Resume extends React.Component {
       <main className="resume">
         <section>
           <h1>Resume</h1>
-          <div>
-            <a className="download-resume" target="_blank" href={data.linkToPdf} />
-          </div>
+          {data.map(resume => {
+            return <div>
+              <a className="download-resume" target="_blank" href={resume.linkToPdf} />
+            </div>
+          })}
         </section>
         <Footer />
       </main>

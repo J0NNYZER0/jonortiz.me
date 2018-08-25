@@ -1,10 +1,10 @@
 import * as types from '../constants/actionTypes';
-//import api from '../api/messageApi';
-import api from '../api/mock/messageApi';
+//import api from '../api/educationApi';
+import api from '../api/mock/educationApi';
 import {beginAjaxCall} from './ajaxStatusActions';
 
 export function loadSuccess(data) {
-  return { type: types.MESSAGE.LOAD, data };
+  return { type: types.EDUCATION.LOAD, data };
 }
 
 export function load() {
