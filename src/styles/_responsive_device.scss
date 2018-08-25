@@ -81,6 +81,10 @@ and (max-device-width : 667px) {
     transition: .5s ease-in-out;
     cursor: pointer;
   }
+  #nav-icon span {
+    height: 10px;
+    border-radius: 10px;
+  }
   #nav-icon span:nth-child(1) {
     top: 0px;
   }
