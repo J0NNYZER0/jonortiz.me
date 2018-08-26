@@ -8,7 +8,6 @@ footer {
   font-family: 'NeutrafaceDisplayTitling';
 }
 footer div.menu__social,
-footer div.site_love,
 footer div.company_info
  {
   flex: auto;
@@ -22,42 +21,7 @@ footer div.menu__social {
   margin-left: 10px;
   margin-right: 10px;
 }
-div.site_love a {
-  cursor: pointer;
-}
-div.love_message {
-  display: none;
-  width: calc(100% - 60px);
-  margin: 0 auto;
-  position: absolute;
-  bottom: 80px;
-  left: 30px;
-  color: #555;
-  background-color: #fff;
-  z-index: 12;
-  box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.5), 0 -9px 30px 0 rgba(0, 0, 0, 0.5);
-}
-div.love_message p {
-  margin: 20px;
-  text-align: left;
-}
-div.love_message.show {
-  display: block;
-}
-div.love_message:after {
-  content: "";
-  position: absolute;
-  box-shadow: rgba(0, 0, 0, 0.3) 2px 2px 2px ;
-  -moz-transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-  bottom: -10px;
-  left: calc(50% - 10px);
-  border-width: 10px;
-  border-style: solid;
-  border-color: transparent #FFF #FFF transparent;
-}
-.menu__social span,
-.site_love span {
+.menu__social span {
   height: 30px;
   width: 30px;
   display: block;
@@ -65,16 +29,8 @@ div.love_message:after {
   background-repeat: no-repeat;
   background-position: 50%;
 }
-.site_love span {
-  cursor: pointer;
-  background-image: url(https://s3.us-east-2.amazonaws.com/ui-icons/heart.svg);
-}
 .menu__social > a:first-child {
   //margin-left: 0;
-}
-.site_love span {
-  height: 20px;
-  background-size: 20px;
 }
 span.copyright {
   display: block;
@@ -97,9 +53,6 @@ footer div:last-child {
     margin-left: 30px;
     margin-top: 0px;
   }
-  footer div.site_love {
-    justify-content: center;
-  }
   div.love_message:after {
     left: calc(50% - -115px);
   }
@@ -117,14 +70,5 @@ footer div:last-child {
   span.copyright {
     text-align: right;
     margin-right: 30px;
-  }
-}
-
-@media only screen  and (min-width : 1224px) and (max-width : 1420px) {
-  div.love_message {
-    width: calc(100% - 53px);
-  }
-  div.love_message:after {
-      left: calc(50% - -111px);
   }
 }

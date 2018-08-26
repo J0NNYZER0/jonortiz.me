@@ -25,22 +25,12 @@ class Footer extends React.Component {
 
     return (
       <footer>
-        <div className={(this.state.toggle) ? 'love_message show' : 'love_message'}>
-          <p>
-            Made with 🖤 by me. The UI is <b>Reactjs</b>.
-            The API is <b>Nodejs</b>. The DB is <b>Mysql</b>.
-            The PaAS is <b>Heroku</b>. The CDN is <b>AWS</b>. The code is on <b>git</b>.
-          </p>
-        </div>
         <div className="menu__social">
           {social_media.map((el, idx) => {
             return <a key={idx} href={el.url} target="_blank">
               <span style={{ backgroundImage: el.image }} />
             </a>
           })}
-        </div>
-        <div className="site_love">
-          <span onClick={this.toggle} />
         </div>
         <div className="company_info">
           {site.map((el, idx) => <span key={idx} className="copyright">&copy; {year} {el.title}</span>)}
