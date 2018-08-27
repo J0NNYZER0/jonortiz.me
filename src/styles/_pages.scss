@@ -1,4 +1,6 @@
 section.home {
+  border-bottom: 1px solid #ccc;
+
    > div > div {
     flex: 1;
     display: flex;
@@ -90,6 +92,8 @@ a.download-resume {
 }
 
 section.experience {
+  border-bottom: 1px solid #ccc;
+
   .job {
     width: calc(100% - 140px);
     margin: 0 auto;
@@ -158,26 +162,20 @@ section.experience {
   }
 }
 
-@media only screen  and (min-width : 320px) and (max-width : 900px) {
+section.skillsets,
+section.education,
+section.resume,
+section.contact {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 101px);
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid #ccc;
+}
 
-  .experience {
-    .job {
-      border-bottom: 1px solid #ccc;
-      width: calc(100% - 60px);
-      margin: 0 auto;
-      .button_wrapper {
-        display: flex;
-        width: 100%;
-        margin: 30px auto;
-      }
-    }
-    .job:last-child {
-      border-bottom: 0;
-    }
-    .project_details {
-      display: none;
-    }
-  }
+section.skillsets {
+  border-top: 0;
 }
 
 @media only screen  and (min-width : 320px) and (max-width : 700px) {
@@ -219,6 +217,27 @@ section.experience {
   }
 }
 
+@media only screen  and (min-width : 320px) and (max-width : 900px) {
+  .experience {
+    .job {
+      border-bottom: 1px solid #ccc;
+      width: calc(100% - 60px);
+      margin: 0 auto;
+      .button_wrapper {
+        display: flex;
+        width: 100%;
+        margin: 30px auto;
+      }
+    }
+    .job:last-child {
+      border-bottom: 0;
+    }
+    .project_details {
+      display: none;
+    }
+  }
+}
+
 @media only screen  and (min-width : 701px) and (max-width : 1224px) {
   section.home {
     span.profile_picture {
@@ -227,6 +246,12 @@ section.experience {
       background-size: 150px;
       background-position: 50% 70%;
     }
+  }
+}
+
+@media only screen  and (min-width : 320px) and (max-width : 1224px) {
+  section.home {
+    min-height: calc(100vh - 101px);
   }
 }
 
@@ -253,6 +278,7 @@ section.experience {
 
 @media only screen  and (min-width : 1224px) and (max-width : 1420px) {
   section.home {
+    min-height: 100vh;
     h1 {
       font-size: 8vw;
     }
