@@ -1,4 +1,4 @@
-import { takeEvery, put/*, call*/ } from 'redux-saga/effects';
+import { takeEvery, put, all } from 'redux-saga/effects';
 
 export function* toggleModal(value) {
   yield put({ type: 'TOGGLE.MODAL', value: value.value});
@@ -9,7 +9,7 @@ export function* watchToggleModal() {
 }
 
 export default function* rootSaga() {
-  yield [
+  yield all([
     watchToggleModal()
-  ];
+  ]);
 }
