@@ -6,18 +6,47 @@ import Footer from '../common/Footer';
 class Home extends React.Component {
 
   constructor(props) {
-    
+
     super(props);
 
     this.state = {
       toggle: false
     }
     this.toggle = this.toggle.bind(this, this.state.toggle);
+    this.closeProfileMessage = this.closeProfileMessage.bind(this);
   }
 
 
+  componentDidMount() {
+
+    document.addEventListener('click', this.closeProfileMessage);
+  }
+
+  componentWillUnmount() {
+
+    document.removeEventListener('click', this.closeProfileMessage);
+  }
+
   toggle() {
+
     let toggleState = this.state.toggle === true ? false : true;
+    this.setState({toggle: toggleState});
+  }
+
+  closeProfileMessage(e) {
+
+    let toggleState;
+
+    if (e.target.closest('.love_message') ||
+      (e.target.className === 'profile_picture' &&
+      this.state.toggle === false)) {
+
+      toggleState = true;
+    } else {
+
+      toggleState = false;
+    }
+
     this.setState({toggle: toggleState});
   }
 
@@ -28,10 +57,11 @@ class Home extends React.Component {
       <main className="home">
         <section>
           {home.map((section,idx) => {
+            let profilePic = (this.state.toggle) ? section.profile_pic : section.selected_profile_pic;
 
             return <div key={idx}>
               <div>
-                <span onClick={this.toggle} className="profile_picture" style={{ backgroundImage: section.profile_pic }} />
+                <span className="profile_picture" style={{ backgroundImage: "url(" + profilePic + ")" }} />
               </div>
               <div className={(this.state.toggle) ? 'love_message show' : 'love_message'}>
                 <p>
