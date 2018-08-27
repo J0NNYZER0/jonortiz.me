@@ -87,7 +87,8 @@ section {
   position: relative;
 }
 
-main > section > div {
+main > section > div,
+main > div > section > div {
   display: flex;
   justify-content: center;
   align-items: center;

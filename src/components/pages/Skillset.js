@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
-import Footer from '../common/Footer';
 
 class Skillset extends React.Component {
 
@@ -14,21 +13,18 @@ class Skillset extends React.Component {
     const { skillset } = this.props;
 
     return (
-      <main className="skillsets">
-        <section>
-          <h1>Skillsets</h1>
-          {skillset.map((skill, i) => {
-            return <div key={i}>
-              <h2>{skill.title}</h2>
-              {<ul className="tagcloud">
-                {skill.items.map((item, ii) => <li key={ii}>{item}</li>)}
-              </ul>}
-            </div>
-            }
-          )}
-        </section>
-        <Footer />
-      </main>
+      <section className="skillsets">
+        <h1>Skillsets</h1>
+        {skillset.map((skill, i) => {
+          return <div key={i}>
+            <h2>{skill.title}</h2>
+            {<ul className="tagcloud">
+              {skill.items.map((item, ii) => <li key={ii}>{item}</li>)}
+            </ul>}
+          </div>
+          }
+        )}
+      </section>
     );
   }
 }

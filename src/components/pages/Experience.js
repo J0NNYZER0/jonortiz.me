@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import Job from '../common/Job';
-import Footer from '../common/Footer';
 
 class Experience extends React.Component {
 
@@ -15,13 +14,10 @@ class Experience extends React.Component {
     const { experience } = this.props;
 
     return (
-      <main className="experience">
-        <section>
-          <h1>Experience</h1>
-          {experience.map((el, idx) => <Job key={idx} idx={idx} experience={el} />)}
-        </section>
-        <Footer />
-      </main>
+      <section className="experience">
+        <h1>Experience</h1>
+        {experience.map((el, idx) => <Job key={idx} idx={idx} experience={el} />)}
+      </section>
     );
   }
 }

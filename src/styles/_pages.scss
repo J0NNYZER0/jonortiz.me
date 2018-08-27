@@ -1,8 +1,8 @@
-.home {
-  section > div {
+section.home {
+   > div {
     min-height: calc(100vh - 161px);
   }
-  section > div > div {
+   > div > div {
     flex: 1;
     display: flex;
     align-items: center;
@@ -26,9 +26,10 @@
   div.love_message {
     display: none;
     width: calc(100% - 60px);
+    max-width: 600px;
     margin: 0 auto;
     position: absolute;
-    left: 30px;
+    //left: 30px;
     color: #555;
     background-color: #fff;
     z-index: 12;
@@ -73,17 +74,17 @@
     flex: 1;
   }
 }
-.education {
+section.education {
 
-  section > p {
+  > p {
     display: flex;
     align-items: center;
     justify-content: center;
     height: calc(100vh - 302px);
   }
 }
-.resume {
-  section > div {
+section.resume {
+  > div {
     display: flex;
     height: calc(100vh - 362px);
   }
@@ -94,7 +95,7 @@
     height: 100px;
   }
 }
-.experience {
+section.experience {
   .job {
     width: calc(100% - 140px);
     margin: 0 auto;
@@ -163,13 +164,13 @@
   }
 }
 
+
+
 @media only screen  and (min-width : 320px) and (max-width : 1224px) {
 
 }
 @media only screen  and (min-width : 320px) and (max-width : 900px) {
-  .home div.love_message.show {
-    top: 180px;
-  }
+
   .experience {
     .job {
       border-bottom: 1px solid #ccc;
@@ -191,8 +192,8 @@
   h1 {
     text-align: center;
   }
-  .home {
-    section > div {
+  section.home {
+    > div {
       min-height: calc(100vh - 361px);
     }
     span.profile_picture {
@@ -241,8 +242,8 @@
 }
 
 @media only screen  and (min-width : 701px) and (max-width : 1224px) {
-  .home {
-    section > div {
+  section .home {
+    > div {
       min-height: calc(100vh - 262px);
     }
     span.profile_picture {
@@ -269,14 +270,26 @@
 }
 
 @media only screen  and (min-width : 1224px) and (max-width : 1420px) {
-  .home {
+  section.home {
     h1 {
       font-size: 8vw;
     }
   }
-  .experience {
+  section.experience {
     .button_wrapper {
       display: none;
     }
+  }
+}
+
+@media only screen  and (min-width : 320px) and (max-width : 700px) {
+  .love_message.show {
+    top: 150px;
+  }
+}
+
+@media only screen  and (min-width : 701px) and (max-width : 1420px) {
+  .love_message.show {
+    top: 250px;
   }
 }

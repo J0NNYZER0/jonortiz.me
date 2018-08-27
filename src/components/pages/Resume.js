@@ -1,29 +1,38 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Footer from '../common/Footer';
-import data from '../../data/resume.json';
+import {connect} from 'react-redux';
 
 class Resume extends React.Component {
 
+  constructor(props) {
+    super(props);
+  }
+
   render() {
+
+    const { resume } = this.props;
+
     return (
-      <main className="resume">
-        <section>
-          <h1>Resume</h1>
-          {data.map(resume => {
-            return <div>
-              <a className="download-resume" target="_blank" href={resume.linkToPdf} />
-            </div>
-          })}
-        </section>
-        <Footer />
-      </main>
+      <section className="resume">
+        <h1>Resume</h1>
+        {resume.map(resume => {
+          return <div>
+            <a className="download-resume" target="_blank" href={resume.linkToPdf} />
+          </div>
+        })}
+      </section>
     );
   }
 }
 
 Resume.propTypes = {
-  title: PropTypes.string
+  resume: PropTypes.array.isRequired
 };
 
-export default Resume;
+function mapStateToProps(state) {
+  return {
+    resume: state.resume
+  };
+}
+
+export default connect(mapStateToProps)(Resume);

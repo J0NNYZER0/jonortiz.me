@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
-import Footer from '../common/Footer';
 
 class Home extends React.Component {
 
@@ -54,30 +53,27 @@ class Home extends React.Component {
     const { home } = this.props;
 
     return (
-      <main className="home">
-        <section>
-          {home.map((section,idx) => {
-            let profilePic = (this.state.toggle) ? section.profile_pic : section.selected_profile_pic;
+      <section className="home">
+        {home.map((section,idx) => {
+          let profilePic = (this.state.toggle) ? section.profile_pic : section.selected_profile_pic;
 
-            return <div key={idx}>
-              <div>
-                <span className="profile_picture" style={{ backgroundImage: "url(" + profilePic + ")" }} />
-              </div>
-              <div className={(this.state.toggle) ? 'love_message show' : 'love_message'}>
-                <p>
-                  Made with 🖤 by me. The UI is <b>Reactjs</b>.
-                  The API is <b>Nodejs</b>. The DB is <b>Mysql</b>.
-                  The PaAS is <b>Heroku</b>. The CDN is <b>AWS</b>. The code is on <b>git</b>.
-                </p>
-              </div>
-              <h1>{section.title}</h1>
-              <p dangerouslySetInnerHTML={{__html: section.tagline}} />
+          return <div key={idx}>
+            <div>
+              <span className="profile_picture" style={{ backgroundImage: "url(" + profilePic + ")" }} />
             </div>
-          })}
-          {/*<a className="animated_down_arrow"><span className="down-arrow" /></a>*/}
-        </section>
-        <Footer />
-      </main>
+            <div className={(this.state.toggle) ? 'love_message show' : 'love_message'}>
+              <p>
+                Made with 🖤 by me. The UI is <b>Reactjs</b>.
+                The API is <b>Nodejs</b>. The DB is <b>Mysql</b>.
+                The PaAS is <b>Heroku</b>. The CDN is <b>AWS</b>. The code is on <b>git</b>.
+              </p>
+            </div>
+            <h1>{section.title}</h1>
+            <p dangerouslySetInnerHTML={{__html: section.tagline}} />
+          </div>
+        })}
+        {/*<a className="animated_down_arrow"><span className="down-arrow" /></a>*/}
+      </section>
     );
   }
 }

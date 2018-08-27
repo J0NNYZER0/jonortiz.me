@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
-import Footer from '../common/Footer';
 
 class Education extends React.Component {
 
@@ -13,13 +12,10 @@ class Education extends React.Component {
     const { education } = this.props;
 
     return (
-      <main className="education">
-        <section>
-        <h1>Education</h1>
-          {education.map(level => <p dangerouslySetInnerHTML={{__html: level.bachelors}} />)}
-        </section>
-        <Footer />
-      </main>
+      <section className="education">
+      <h1>Education</h1>
+        {education.map(level => <p dangerouslySetInnerHTML={{__html: level.bachelors}} />)}
+      </section>
     );
   }
 }

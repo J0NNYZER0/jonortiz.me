@@ -1,9 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
-import PageTitle from '../common/PageTitle';
 import ContactForm from '../common/forms/Contact';
-import Footer from '../common/Footer';
 
 class Contact extends React.Component {
   constructor(props) {
@@ -15,13 +13,10 @@ class Contact extends React.Component {
     const { contact } = this.props;
 
     return (
-      <main>
-        <section>
-          <PageTitle title="Contact" />
-          <ContactForm contact={contact} />
-        </section>
-        <Footer />
-      </main>
+      <section className="contact">
+        <h1>Contact</h1>
+        <ContactForm contact={contact} />
+      </section>
     );
   }
 }
