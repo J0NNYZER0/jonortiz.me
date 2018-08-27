@@ -19,7 +19,7 @@ class App extends React.Component {
       <div className="layout">
         <Modal />
         <Nav pathname={location.pathname} />
-        <main>
+        <main className="scrollable">
           {React.cloneElement(this.props.children, { })}
           <Footer />
         </main>

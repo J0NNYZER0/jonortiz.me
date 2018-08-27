@@ -1,7 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
-
+import Experience from './Experience';
+import Skillset from './Skillset';
+import Education from './Education';
+import Resume from './Resume';
+import Contact from './Contact';
 class Home extends React.Component {
 
   constructor(props) {
@@ -52,29 +56,41 @@ class Home extends React.Component {
   render() {
     const { home } = this.props;
 
-    return (
-      <section className="home">
+    return [
+      <section key="home" className="home">
         {home.map((section,idx) => {
-          let profilePic = (this.state.toggle) ? section.profile_pic : section.selected_profile_pic;
+          let profilePic = (this.state.toggle) ?
+            section.profile_pic :
+            section.selected_profile_pic;
 
           return <div key={idx}>
             <div>
-              <span className="profile_picture" style={{ backgroundImage: "url(" + profilePic + ")" }} />
+              <span
+                className="profile_picture"
+                style={{ backgroundImage: "url(" + profilePic + ")" }} />
             </div>
-            <div className={(this.state.toggle) ? 'love_message show' : 'love_message'}>
+            <div className={(this.state.toggle) ?
+              'love_message show' :
+              'love_message'}>
               <p>
                 Made with 🖤 by me. The UI is <b>Reactjs</b>.
                 The API is <b>Nodejs</b>. The DB is <b>Mysql</b>.
-                The PaAS is <b>Heroku</b>. The CDN is <b>AWS</b>. The code is on <b>git</b>.
+                The PaAS is <b>Heroku</b>. The CDN is <b>AWS</b>.
+                The code is on <b>git</b>.
               </p>
             </div>
             <h1>{section.title}</h1>
             <p dangerouslySetInnerHTML={{__html: section.tagline}} />
+            <a className="down_animation"><span className="down_arrow" /></a>
           </div>
         })}
-        {/*<a className="animated_down_arrow"><span className="down-arrow" /></a>*/}
-      </section>
-    );
+      </section>,
+      <Experience key="experience" />,
+      <Skillset key="skillset" />,
+      <Education key="education" />,
+      <Resume key="resume" />,
+      <Contact key="contact" />
+    ];
   }
 }
 

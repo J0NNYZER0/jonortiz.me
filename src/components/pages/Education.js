@@ -13,8 +13,10 @@ class Education extends React.Component {
 
     return (
       <section className="education">
-      <h1>Education</h1>
-        {education.map(level => <p dangerouslySetInnerHTML={{__html: level.bachelors}} />)}
+        <h1>Education</h1>
+        <div className="download_container">
+          {education.map(level => <p dangerouslySetInnerHTML={{__html: level.bachelors}} />)}
+        </div>
       </section>
     );
   }
