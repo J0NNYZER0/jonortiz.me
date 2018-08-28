@@ -7,6 +7,7 @@ import Education from './Education';
 import Resume from './Resume';
 import Contact from './Contact';
 import { Link, Element } from 'react-scroll';
+import TalkBubble from '../common/TalkBubble';
 import BackToTop from '../common/BackToTop';
 
 class Home extends React.Component {
@@ -72,16 +73,7 @@ class Home extends React.Component {
                   className="profile_picture"
                   style={{ backgroundImage: "url(" + profilePic + ")" }} />
               </div>
-              <div className={(this.state.toggle) ?
-                'love_message show' :
-                'love_message'}>
-                <p>
-                  Made with 🖤 by me. The UI is <b>Reactjs</b>.
-                  The API is <b>Nodejs</b>. The DB is <b>Mysql</b>.
-                  The PaAS is <b>Heroku</b>. The CDN is <b>AWS</b>.
-                  The code is on <b>git</b>.
-                </p>
-              </div>
+              {this.state.toggle && <TalkBubble home={home} />}
               <h1>{section.title}</h1>
               <p dangerouslySetInnerHTML={{__html: section.tagline}} />
               <Link className="down_animation" activeClass="active" to="experience"
