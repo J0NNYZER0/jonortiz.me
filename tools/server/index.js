@@ -49,7 +49,7 @@ const Hapi = require('hapi'),
       },
       {
         method: 'GET',
-        path: '/skillsets'
+        path: '/skillset'
       },
       {
         method: 'GET',
