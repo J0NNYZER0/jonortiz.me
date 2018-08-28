@@ -14,7 +14,7 @@ class Skillset extends React.Component {
 
     return (
       <section className="skillsets">
-        <h1>Skillsets</h1>
+        <h1>Skillset</h1>
         {skillset.map((skill, i) => {
           return <div key={i}>
             <h2>{skill.title}</h2>
