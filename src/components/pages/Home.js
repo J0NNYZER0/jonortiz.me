@@ -64,8 +64,8 @@ class Home extends React.Component {
         <section key="home" className="home">
           {home.map((section,idx) => {
             let profilePic = (this.state.toggle) ?
-              section.profile_pic :
-              section.selected_profile_pic;
+              section.selected_profile_pic :
+              section.profile_pic;
 
             return <div key={idx}>
               <div>

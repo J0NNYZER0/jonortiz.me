@@ -1,7 +1,7 @@
 [{
   "section": "top",
-  "profile_pic": "https://s3.us-east-2.amazonaws.com/jonortiz.me/me.png",
-  "selected_profile_pic": "https://s3.us-east-2.amazonaws.com/jonortiz.me/me2.png",
+  "profile_pic": "https://s3.us-east-2.amazonaws.com/jonortiz.me/me2.png",
+  "selected_profile_pic": "https://s3.us-east-2.amazonaws.com/jonortiz.me/me.png",
   "talk_bubble": "Made with \uD83D\uDDA4 by me. The UI is <b>Reactjs<\/b>. The API is <b>Nodejs<\/b>. The DB is <b>Mysql<\/b>. The PaAS is <b>Heroku<\/b>. The CDN is <b>AWS<\/b>. The code is on <b>git<\/b>.",
   "title": "Full Stack Engineer",
   "tagline": "Pushing &nbsp;<b>UI<\/b>s &nbsp;<b>API<\/b>s and&nbsp; <b>DB<\/b>s to the edge of technology.<br \/>\r\n  Empowering people to manage, protect and understand data."
