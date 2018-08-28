@@ -5,7 +5,7 @@ export default {
   home: [],
   messages: [],
   resume: [],
-  site: [],
+  site: {},
   skillset: [],
   social_media: []
 };

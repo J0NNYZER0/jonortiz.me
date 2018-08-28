@@ -13,15 +13,15 @@ class App extends React.Component {
 
   render() {
 
-    const { location } = this.props;
+    const { location, site, social_media } = this.props;
 
     return (
       <div className="layout">
         <Modal />
-        <Nav pathname={location.pathname} />
+        <Nav pathname={location.pathname} site={site} />
         <main className="scrollable">
           {React.cloneElement(this.props.children, { })}
-          <Footer />
+          <Footer site={site} social_media={social_media}  />
         </main>
       </div>
     );
@@ -30,7 +30,16 @@ class App extends React.Component {
 
 App.propTypes = {
   children: PropTypes.element,
-  location: PropTypes.object
+  location: PropTypes.object,
+  site: PropTypes.object.isRequired,
+  pathname: PropTypes.string
 };
 
-export default withRouter(connect(null, null)(App));
+function mapStateToProps(state) {
+  return {
+    site: state.site,
+    social_media: state.social_media
+  };
+}
+
+export default withRouter(connect(mapStateToProps)(App));

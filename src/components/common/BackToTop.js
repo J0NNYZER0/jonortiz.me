@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { Link } from 'react-scroll';
 
 class BackToTop extends React.Component {
   constructor(props) {
@@ -10,19 +10,18 @@ class BackToTop extends React.Component {
   }
 
   render() {
-    const { showBackToTopButton, backToTop } = this.props;
 
     return (
-      <div className={(!showBackToTopButton) ? 'back_to_top_button' : 'back_to_top_button show'} onClick={backToTop}>
-        Back To Top
+      <div className="back_to_top">
+        <Link activeClass="active" to="top"
+          spy={true} smooth={true}
+          offset={0} duration={500}
+          onSetActive={this.handleSetActive}>
+          Back To Top
+        </Link>
       </div>
     );
   }
 }
-
-BackToTop.propTypes = {
-  showBackToTopButton: PropTypes.bool,
-  backToTop: PropTypes.func
-};
 
 export default BackToTop;

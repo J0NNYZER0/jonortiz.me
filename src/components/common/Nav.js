@@ -1,7 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Link, IndexLink } from 'react-router';
-import {connect} from 'react-redux';
+import ScrollNav from './ScrollNav';
 
 class Nav extends React.Component {
 
@@ -33,44 +32,36 @@ class Nav extends React.Component {
 
     const { site, pathname } = this.props;
 
-    return (
-      <nav>
-        <div className="logo">
-          {site.map((el,idx) => <IndexLink key={idx} to="/">{el.title}</IndexLink>)}
-          <div className="menu_wrapper">
-            <div onClick={this.toggle} id="nav-icon" className={(this.state.toggle) ?
-              'open' : '' }>
-              <span />
-              <span />
-              <span />
-              <span />
+    if (site.is_scrollable !== true) {
+      return (
+        <nav>
+          <div className="logo">
+            <IndexLink to="/">{site.title}</IndexLink>
+            <div className="menu_wrapper">
+              <div onClick={this.toggle} id="nav-icon" className={(this.state.toggle) ?
+                'open' : '' }>
+                <span />
+                <span />
+                <span />
+                <span />
+              </div>
             </div>
           </div>
-        </div>
-        {<div className={(this.state.toggle) ?
-          'menu show' : 'menu'}>
-          {pathname !== '/' &&
-          <IndexLink to="/">Home</IndexLink>}
-          <Link to="/experience">Experience</Link>
-          <Link to="/skillsets">Skillsets</Link>
-          <Link to="/education">Education</Link>
-          <Link to="/resume">Resume</Link>
-          <Link to="/contact">Contact</Link>
-        </div>}
-      </nav>);
+          {<div className={(this.state.toggle) ?
+            'menu show' : 'menu'}>
+            {pathname !== '/' &&
+            <IndexLink to="/">Home</IndexLink>}
+            <Link to="/experience">Experience</Link>
+            <Link to="/skillset">Skillset</Link>
+            <Link to="/education">Education</Link>
+            <Link to="/resume">Resume</Link>
+            <Link to="/contact">Contact</Link>
+          </div>}
+        </nav>);
+    } else {
+      return (<ScrollNav pathname={location.pathname} site={site} />)
+    }
     }
 }
 
-Nav.propTypes = {
-  site: PropTypes.array.isRequired,
-  pathname: PropTypes.string.isRequired
-};
-
-function mapStateToProps(state) {
-  return {
-    social_media: state.social_media,
-    site: state.site
-  };
-}
-
-export default connect(mapStateToProps)(Nav);
+export default Nav;

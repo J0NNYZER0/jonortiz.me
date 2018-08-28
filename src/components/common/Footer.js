@@ -1,6 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import {connect} from 'react-redux';
 
 class Footer extends React.Component {
   constructor(props) {
@@ -18,7 +16,7 @@ class Footer extends React.Component {
 
   render() {
 
-    const { social_media, site } = this.props;
+    const { site, social_media } = this.props;
 
     let today = new Date(),
     year = today.getFullYear();
@@ -33,23 +31,11 @@ class Footer extends React.Component {
           })}
         </div>
         <div className="company_info">
-          {site.map((el, idx) => <span key={idx} className="copyright">&copy; {year} {el.title}</span>)}
+          <span className="copyright">&copy; {year} {site.title}</span>
         </div>
       </footer>
     );
   }
 }
 
-Footer.propTypes = {
-  social_media: PropTypes.array.isRequired,
-  site: PropTypes.array.isRequired
-};
-
-function mapStateToProps(state) {
-  return {
-    social_media: state.social_media,
-    site: state.site
-  };
-}
-
-export default connect(mapStateToProps)(Footer);
+export default Footer;

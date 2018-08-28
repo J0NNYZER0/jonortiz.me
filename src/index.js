@@ -17,7 +17,7 @@ import * as socialmedia from './actions/socialMediaActions';
 require('./favicon.ico'); // Tell webpack to load favicon.ico
 import './styles/all.scss'; // Yep, that's right. You can
 import { syncHistoryWithStore } from 'react-router-redux';
-import * as ascii from './utils/ascii';
+//import * as ascii from './utils/ascii';
 
 const store = configureStore();
 const history = syncHistoryWithStore(browserHistory, store);
@@ -37,7 +37,7 @@ history.listen((location) => {
     window.ga('send', 'pageview', location.pathname);
 });
 
-ascii.consoleLogAscii();
+//ascii.consoleLogAscii();
 
 render(
   <AppContainer>

@@ -16,7 +16,7 @@ class Resume extends React.Component {
       <section className="resume">
         <h1>Resume</h1>
         {resume.map(resume => {
-          return <div className="download_container">
+          return <div key="resume" className="download_container">
             <p dangerouslySetInnerHTML={{__html: resume.call_to_action}} />
             <a className="download-resume" target="_blank" href={resume.link_to_pdf} />
           </div>

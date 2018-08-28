@@ -1,4 +1,4 @@
-@keyframes header__arrow {
+@keyframes moving_downward_and_fading_in_and_out {
     0% {
         transform: translateY(0) scale(1);
         opacity: 1
@@ -22,17 +22,21 @@
 
 .down_animation {
   display: block;
-  animation: header__arrow 2s linear infinite;
+  animation: moving_downward_and_fading_in_and_out 2s linear infinite;
 }
+
+/***********THINGS TO ANIMATE***********/
+
 .down_arrow {
   position: relative;
   display: block;
   width: 50px;
   height: 50px;
+  margin: 0 auto;
+  top: 50px;
   background-image: url('https://s3.us-east-2.amazonaws.com/ui-icons/white/down-arrow.svg');
   background-size: 50px;
   background-position: center;
   background-repeat: no-repeat;
-  margin: 0 auto;
-  top: 50px;
+  cursor: pointer;
 }

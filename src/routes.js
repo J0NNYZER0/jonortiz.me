@@ -17,7 +17,7 @@ export default (
     <Route path="education" component={Education}/>
     <Route path="experience" component={Experience}/>
     <Route path="resume" component={Resume}/>
-    <Route path="skillsets" component={Skillset}/>
+    <Route path="skillset" component={Skillset}/>
     <Route path="*" component={NotFoundPage}/>
   </Route>
 );
